@@ -1,0 +1,121 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: rgba(13, 10, 26, 0.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+  transition: background 0.3s, border-color 0.3s;
+}
+.navbar.scrolled {
+  background: rgba(13, 10, 26, 0.97);
+  border-bottom-color: rgba(201, 168, 76, 0.25);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  align-items: center;
+}
+.nav-links a {
+  color: var(--parchment-muted);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color 0.25s;
+  position: relative;
+  padding-bottom: 3px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.25s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+}
+.nav-links a.active::after,
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.nav-icon {
+  background: none;
+  border: none;
+  color: var(--parchment-muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.25s;
+  padding: 4px 6px;
+  position: relative;
+}
+.nav-icon:hover { color: var(--gold); }
+
+.cart-btn {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.cart-badge {
+  position: absolute;
+  top: -5px; right: -6px;
+  background: var(--gold);
+  color: var(--cosmic);
+  border-radius: 50%;
+  width: 17px; height: 17px;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    flex-direction: column;
+    background: rgba(13, 10, 26, 0.98);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 1.5rem 2rem;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .nav-links.open { display: flex; }
+}

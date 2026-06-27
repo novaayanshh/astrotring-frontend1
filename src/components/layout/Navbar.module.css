@@ -1,0 +1,22 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(13,10,26,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo { font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--gold); letter-spacing: 2px; }
+.links { display: flex; gap: 2rem; list-style: none; }
+.link { color: var(--parchment-muted); font-size: 0.82rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s; }
+.link:hover, .active { color: var(--gold); }
+.actions { display: flex; align-items: center; gap: 1rem; }
+.iconBtn { background: none; border: none; color: var(--parchment-muted); font-size: 1.1rem; transition: color 0.3s; padding: 4px; position: relative; text-decoration: none; }
+.iconBtn:hover { color: var(--gold); }
+.badge { position: absolute; top: -6px; right: -8px; background: var(--gold); color: var(--cosmic); border-radius: 50%; width: 16px; height: 16px; font-size: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+@media (max-width: 768px) { .links { display: none; } .nav { padding: 0 1rem; } }

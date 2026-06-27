@@ -1,0 +1,51 @@
+.hero { min-height: calc(100vh - 64px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; position: relative; z-index: 1; }
+.heroEyebrow { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; opacity: 0.8; }
+.heroTitle { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 6vw, 5rem); color: var(--white); line-height: 1.1; margin-bottom: 1.5rem; }
+.gold { color: var(--gold); }
+.heroSub { font-size: 1.05rem; color: var(--parchment-muted); max-width: 520px; line-height: 1.8; margin-bottom: 3rem; }
+.heroBtns { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+.heroScroll { position: absolute; bottom: 2rem; color: var(--gold); font-size: 1.5rem; animation: bounce 2s infinite; }
+@keyframes bounce { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-8px); } }
+
+.zodiacStrip { background: var(--indigo-mid); border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 1rem 0; overflow: hidden; }
+.zodiacScroll { display: flex; gap: 2rem; animation: scrollX 22s linear infinite; white-space: nowrap; width: max-content; }
+.zodiacItem { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--gold); letter-spacing: 1px; }
+.dot { opacity: 0.3; margin-left: 1rem; }
+@keyframes scrollX { from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
+
+.catSection { background: var(--cosmic); position: relative; z-index: 1; }
+.catGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+.catCard { background: var(--card-bg); border: 1px solid rgba(201,168,76,0.2); padding: 2rem 1.5rem; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }
+.catCard:hover { border-color: var(--gold); transform: translateY(-4px); }
+.catIcon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+.catName { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--white); margin-bottom: 0.5rem; }
+.catCount { font-size: 0.8rem; color: var(--gold); opacity: 0.7; }
+
+.featuredSection { background: var(--indigo-mid); border-top: 1px solid rgba(201,168,76,0.1); border-bottom: 1px solid rgba(201,168,76,0.1); position: relative; z-index: 1; }
+.prodGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+
+.quiz { background: var(--indigo-mid); border: 1px solid rgba(201,168,76,0.2); max-width: 700px; margin: 0 auto; padding: 3rem; position: relative; z-index: 1; }
+.quizTitle { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 1rem; text-align: center; }
+.quizSub { color: var(--parchment-muted); text-align: center; margin-bottom: 2rem; line-height: 1.8; font-size: 0.9rem; }
+.zodiacGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+.zodiacBtn { background: transparent; border: 1px solid rgba(201,168,76,0.25); color: var(--parchment-muted); padding: 0.75rem 0.5rem; transition: all 0.3s; font-size: 0.82rem; text-align: center; }
+.zodiacBtn:hover, .zodiacActive { background: rgba(201,168,76,0.1); border-color: var(--gold); color: var(--gold); }
+.zSign { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+.quizResult { margin-top: 1.5rem; padding: 1.5rem; background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.2); }
+.qrTitle { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 0.5rem; font-size: 1rem; }
+.qrText { color: var(--parchment-muted); line-height: 1.8; font-size: 0.9rem; }
+
+.trustBar { background: var(--indigo-mid); border-top: 1px solid rgba(201,168,76,0.1); border-bottom: 1px solid rgba(201,168,76,0.1); padding: 2.5rem 2rem; position: relative; z-index: 1; }
+.trustGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; text-align: center; }
+.trustIcon { font-size: 2rem; color: var(--gold); margin-bottom: 0.75rem; display: block; }
+.trustLabel { font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--white); margin-bottom: 0.3rem; }
+.trustSub { font-size: 0.8rem; color: var(--parchment-muted); }
+
+.testiGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+.testiCard { background: var(--card-bg); border: 1px solid rgba(201,168,76,0.15); padding: 2rem; }
+.testiStars { color: var(--gold); margin-bottom: 1rem; font-size: 0.9rem; }
+.testiText { color: var(--parchment-muted); line-height: 1.8; font-style: italic; margin-bottom: 1.5rem; font-size: 0.92rem; }
+.testiAuthor { display: flex; align-items: center; gap: 0.75rem; }
+.testiAvatar { width: 40px; height: 40px; border-radius: 50%; background: var(--amethyst); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--white); flex-shrink: 0; }
+.testiName { font-size: 0.88rem; color: var(--white); }
+.testiMeta { font-size: 0.75rem; color: var(--gold); opacity: 0.7; }

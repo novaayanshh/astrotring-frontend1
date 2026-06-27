@@ -1,0 +1,19 @@
+.layout { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 0; position: relative; z-index: 1; }
+.tabs { display: flex; border-bottom: 1px solid rgba(201,168,76,0.2); margin-bottom: 2.5rem; }
+.tab { background: none; border: none; color: var(--parchment-muted); padding: 0.9rem 1.5rem; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; border-bottom: 2px solid transparent; transition: all 0.3s; }
+.tab:hover, .activeTab { color: var(--gold); border-bottom-color: var(--gold); }
+.orderItem { display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; align-items: center; background: var(--card-bg); border: 1px solid rgba(201,168,76,0.15); padding: 1.5rem; margin-bottom: 1rem; }
+.orderImg { width: 56px; height: 56px; background: var(--indigo); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; }
+.orderName { font-family: 'Cinzel', serif; color: var(--white); font-size: 0.95rem; margin-bottom: 4px; }
+.orderMeta { font-size: 0.8rem; color: var(--parchment-muted); }
+.status { font-size: 0.78rem; padding: 4px 12px; letter-spacing: 1px; }
+.delivered { background: rgba(76,175,80,0.15); color: #4CAF50; border: 1px solid rgba(76,175,80,0.3); }
+.transit { background: rgba(201,168,76,0.1); color: var(--gold); border: 1px solid rgba(201,168,76,0.3); }
+.empty { text-align: center; padding: 3rem; color: var(--parchment-muted); }
+.wishGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+.kundaliBox { background: var(--card-bg); border: 1px solid rgba(201,168,76,0.2); padding: 2rem; margin-bottom: 1.5rem; }
+.stonesBox { background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.2); padding: 2rem; }
+.kundaliTitle { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 1.25rem; }
+.stonesGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1rem; }
+.stoneCard { text-align: center; padding: 1rem; background: var(--card-bg); border: 1px solid rgba(201,168,76,0.15); }
+@media (max-width: 600px) { .orderItem { grid-template-columns: auto 1fr; } .status { grid-column: 1/-1; } }

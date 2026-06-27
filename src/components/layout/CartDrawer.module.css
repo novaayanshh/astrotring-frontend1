@@ -1,0 +1,24 @@
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 200; backdrop-filter: blur(4px); }
+.drawer { position: fixed; right: 0; top: 0; bottom: 0; width: 380px; background: var(--indigo-mid); border-left: 1px solid rgba(201,168,76,0.2); z-index: 201; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s ease; }
+.open { transform: translateX(0); }
+.head { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; border-bottom: 1px solid rgba(201,168,76,0.15); }
+.headTitle { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.1rem; }
+.closeBtn { background: none; border: none; color: var(--parchment-muted); font-size: 1.1rem; cursor: pointer; }
+.body { flex: 1; overflow-y: auto; padding: 1.25rem; }
+.empty { text-align: center; padding: 3rem 1rem; color: var(--parchment-muted); }
+.emptyIcon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.3; }
+.item { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(201,168,76,0.1); align-items: flex-start; }
+.itemImg { width: 64px; height: 64px; background: var(--indigo); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0; }
+.itemInfo { flex: 1; }
+.itemName { font-size: 0.88rem; color: var(--white); font-family: 'Cinzel', serif; margin-bottom: 4px; }
+.itemPrice { font-size: 0.9rem; color: var(--gold); margin-bottom: 8px; }
+.qtyRow { display: flex; align-items: center; gap: 8px; }
+.qtyBtn { background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); width: 28px; height: 28px; font-size: 1rem; transition: background 0.2s; }
+.qtyBtn:hover { background: rgba(201,168,76,0.2); }
+.qtyVal { color: var(--white); font-size: 0.9rem; min-width: 20px; text-align: center; }
+.removeBtn { background: none; border: none; color: var(--parchment-muted); font-size: 0.85rem; cursor: pointer; padding: 4px; transition: color 0.2s; }
+.removeBtn:hover { color: #ff6b6b; }
+.foot { padding: 1.25rem; border-top: 1px solid rgba(201,168,76,0.15); }
+.total { display: flex; justify-content: space-between; margin-bottom: 1.25rem; font-family: 'Cinzel', serif; font-size: 1rem; }
+.total span:last-child { color: var(--gold); }
+@media (max-width: 480px) { .drawer { width: 100vw; } }

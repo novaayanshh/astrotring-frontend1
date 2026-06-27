@@ -1,0 +1,17 @@
+.card { background: var(--card-bg); border: 1px solid rgba(201,168,76,0.15); cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }
+.card:hover { border-color: var(--gold); transform: translateY(-4px); }
+.imgWrap { width: 100%; height: 220px; background: var(--indigo); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.emoji { font-size: 4.5rem; }
+.badge { position: absolute; top: 12px; left: 12px; background: var(--amethyst); color: var(--white); font-size: 0.7rem; padding: 3px 10px; letter-spacing: 1px; }
+.wishBtn { position: absolute; top: 12px; right: 12px; background: rgba(13,10,26,0.7); border: 1px solid rgba(201,168,76,0.3); color: var(--parchment-muted); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; transition: all 0.3s; border-radius: 50%; font-size: 1rem; }
+.wishBtn:hover, .wishlisted { background: var(--gold); color: var(--cosmic); border-color: var(--gold); }
+.info { padding: 1.25rem; }
+.cat { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-bottom: 0.4rem; }
+.stars { color: var(--gold); font-size: 0.78rem; margin-bottom: 0.4rem; }
+.reviewCount { color: var(--parchment-muted); margin-left: 4px; font-size: 0.72rem; }
+.name { font-family: 'Cinzel', serif; font-size: 0.95rem; color: var(--white); margin-bottom: 0.75rem; line-height: 1.4; }
+.footer { display: flex; align-items: center; justify-content: space-between; }
+.price { font-size: 1.05rem; color: var(--gold); font-weight: 700; }
+.oldPrice { font-size: 0.82rem; color: var(--parchment-muted); text-decoration: line-through; margin-left: 6px; }
+.cartBtn { background: transparent; border: 1px solid rgba(201,168,76,0.4); color: var(--gold); padding: 6px 14px; font-size: 0.76rem; transition: all 0.3s; letter-spacing: 1px; }
+.cartBtn:hover { background: var(--gold); color: var(--cosmic); }

@@ -1,0 +1,15 @@
+.hero { text-align: center; padding: 4rem 2rem 2rem; position: relative; z-index: 1; }
+.sub { color: var(--parchment-muted); max-width: 500px; margin: 1rem auto 0; line-height: 1.8; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1050px; margin: 3rem auto; padding: 0 2rem 4rem; position: relative; z-index: 1; }
+.card { background: var(--card-bg); border: 1px solid rgba(201,168,76,0.2); padding: 2.5rem; text-align: center; transition: all 0.3s; }
+.card:hover { border-color: var(--gold); transform: translateY(-4px); }
+.icon { font-size: 3rem; margin-bottom: 1.5rem; display: block; }
+.name { font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--white); margin-bottom: 0.75rem; }
+.desc { color: var(--parchment-muted); line-height: 1.8; font-size: 0.9rem; margin-bottom: 1rem; }
+.price { color: var(--gold); font-family: 'Cinzel', serif; font-size: 1.1rem; }
+.process { background: var(--indigo-mid); border-top: 1px solid rgba(201,168,76,0.1); position: relative; z-index: 1; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+.step { text-align: center; }
+.stepNum { font-family: 'Cinzel', serif; font-size: 2.5rem; color: var(--gold); opacity: 0.3; margin-bottom: 0.75rem; }
+.stepTitle { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--white); margin-bottom: 0.5rem; }
+.stepText { color: var(--parchment-muted); font-size: 0.88rem; line-height: 1.8; }
