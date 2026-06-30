@@ -1,3 +1,4 @@
+import Login from "./pages/Login";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import StarfieldCanvas from './components/layout/StarfieldCanvas';
@@ -10,6 +11,7 @@ import ProductDetail from './pages/ProductDetail';
 import Services from './pages/Services';
 import Account from './pages/Account';
 import './styles/global.css';
+import Checkout from "./pages/Checkout";
 
 export default function App() {
   return (
@@ -20,11 +22,13 @@ export default function App() {
         <CartDrawer />
         <Notification />
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/services" element={<Services />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
     </CartProvider>

@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import styles from './CartDrawer.module.css';
 
 export default function CartDrawer() {
+  const navigate = useNavigate();
   const { cartItems, cartTotal, isCartOpen, setIsCartOpen, removeFromCart, updateQty, showNotif } = useCart();
 
   const close = () => setIsCartOpen(false);
@@ -46,8 +48,15 @@ export default function CartDrawer() {
               <span>Total</span>
               <span>₹{cartTotal.toLocaleString('en-IN')}</span>
             </div>
-            <button className="btn-primary" style={{ width: '100%', marginBottom: '0.75rem' }}
-              onClick={() => showNotif('Checkout coming soon…')}>
+            <button
+              className="btn-primary"
+              style={{ width: '100%', marginBottom: '0.75rem' }}
+              onClick={() => {
+                showNotif('✦ Proceeding to checkout…');
+                close();
+                navigate('/checkout');
+              }}
+            >
               Proceed to Checkout
             </button>
             <button className="btn-outline" style={{ width: '100%' }} onClick={close}>

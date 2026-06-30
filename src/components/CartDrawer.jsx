@@ -1,13 +1,16 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
+import { useNavigate } from "react-router-dom";
 import './CartDrawer.css';
 
 export default function CartDrawer({ open, onClose }) {
   const { cart, cartTotal, removeFromCart, updateQty, showToast } = useCart();
+  const navigate = useNavigate();
 
   const handleCheckout = () => {
     showToast('✦ Proceeding to checkout…');
     onClose();
+    navigate('/checkout');
   };
 
   return (

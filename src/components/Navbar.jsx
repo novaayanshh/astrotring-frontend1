@@ -60,6 +60,7 @@ export default function Navbar() {
             )}
           </button>
           <Link to="/account" className="nav-icon" title="Account">👤</Link>
+          <Link to="/login">Sign In</Link>
           <button
             className="hamburger"
             onClick={() => setMenuOpen(v => !v)}

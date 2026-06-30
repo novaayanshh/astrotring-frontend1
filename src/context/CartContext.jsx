@@ -32,6 +32,8 @@ export function CartProvider({ children }) {
     setCartItems(prev => prev.map(x => x.id === id ? { ...x, qty: Math.max(1, x.qty + delta) } : x));
   }, []);
 
+  const clearCart = useCallback(() => setCartItems([]), []);
+
   const toggleWishlist = useCallback((product) => {
     setWishlist(prev => {
       const exists = prev.find(x => x.id === product.id);
@@ -50,7 +52,7 @@ export function CartProvider({ children }) {
       isCartOpen, setIsCartOpen,
       wishlist,
       notification, notifVisible,
-      addToCart, removeFromCart, updateQty, toggleWishlist, showNotif,
+      addToCart, removeFromCart, updateQty, clearCart, toggleWishlist, showNotif,
     }}>
       {children}
     </CartContext.Provider>
