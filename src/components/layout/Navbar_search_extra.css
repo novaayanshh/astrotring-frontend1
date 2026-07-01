@@ -1,0 +1,101 @@
+/* ── Add these to the bottom of Navbar.module.css ── */
+
+/* Search wrapper — positions the dropdown relative to the icon */
+.searchWrap {
+  position: relative;
+}
+
+/* Active state for the search icon */
+.iconBtnActive {
+  background: rgba(124, 58, 237, 0.25);
+  border-radius: 8px;
+}
+
+/* Dropdown container */
+.searchDropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 320px;
+  background: rgba(15, 4, 30, 0.97);
+  border: 1px solid rgba(180, 130, 255, 0.22);
+  border-radius: 14px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(124, 58, 237, 0.15);
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+  z-index: 999;
+}
+
+/* Search input row */
+.searchForm {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid rgba(180, 130, 255, 0.1);
+  gap: 0.5rem;
+}
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e9d5ff;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+.searchInput::placeholder { color: rgba(180, 140, 255, 0.35); }
+.searchSubmit {
+  background: none;
+  border: none;
+  color: #a78bfa;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0 0.2rem;
+  line-height: 1;
+}
+.searchSubmit:hover { color: #e9d5ff; }
+
+/* Results list */
+.searchResults {
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem 0;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.searchResultItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+.searchResultItem:hover {
+  background: rgba(124, 58, 237, 0.12);
+}
+.srEmoji { font-size: 1.3rem; flex-shrink: 0; }
+.srInfo  { display: flex; flex-direction: column; gap: 2px; }
+.srName  { font-size: 0.86rem; color: #e9d5ff; }
+.srPrice { font-size: 0.75rem; color: #f5d398; }
+
+/* Empty state */
+.searchEmpty {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.83rem;
+  color: rgba(180, 140, 255, 0.5);
+  margin: 0;
+}
+
+/* Responsive — narrower dropdown on small screens */
+@media (max-width: 480px) {
+  .searchDropdown {
+    width: 260px;
+    right: -40px;
+  }
+}
