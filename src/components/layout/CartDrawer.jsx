@@ -1,13 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import styles from './CartDrawer.module.css';
-
 export default function CartDrawer() {
   const navigate = useNavigate();
   const { cartItems, cartTotal, isCartOpen, setIsCartOpen, removeFromCart, updateQty, showNotif } = useCart();
-
   const close = () => setIsCartOpen(false);
-
   return (
     <>
       {isCartOpen && <div className={styles.overlay} onClick={close} />}
@@ -16,7 +13,6 @@ export default function CartDrawer() {
           <span className={styles.headTitle}>Your Cart</span>
           <button className={styles.closeBtn} onClick={close}>✕</button>
         </div>
-
         <div className={styles.body}>
           {cartItems.length === 0 ? (
             <div className={styles.empty}>
@@ -41,7 +37,6 @@ export default function CartDrawer() {
             ))
           )}
         </div>
-
         {cartItems.length > 0 && (
           <div className={styles.foot}>
             <div className={styles.total}>
