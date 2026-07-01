@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import ProductCard from '../components/ui/ProductCard';
 import Footer from '../components/layout/Footer';
@@ -13,6 +14,7 @@ const ORDERS = [
 export default function Account() {
   const { wishlist, showNotif } = useCart();
   const [tab, setTab] = useState('orders');
+  const navigate = useNavigate();
 
   return (
     <div style={{ paddingTop: '64px' }}>
@@ -56,7 +58,13 @@ export default function Account() {
               <div className={styles.empty}>
                 <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>♡</div>
                 <p>Your wishlist is empty.</p>
-                <a href="/shop" className="btn-outline" style={{ display: 'inline-block', marginTop: '1rem' }}>Browse Gems</a>
+                <button
+                  className="btn-outline"
+                  style={{ display: 'inline-block', marginTop: '1rem' }}
+                  onClick={() => navigate('/shop')}
+                >
+                  Browse Gems
+                </button>
               </div>
             ) : (
               <div className={styles.wishGrid}>
@@ -95,7 +103,11 @@ export default function Account() {
             <div className={styles.stonesBox}>
               <div className={styles.kundaliTitle}>Recommended Stones for You</div>
               <div className={styles.stonesGrid}>
-                {[{ emoji: '💛', name: 'Yellow Sapphire', planet: 'Jupiter' }, { emoji: '🟢', name: 'Emerald', planet: 'Mercury' }, { emoji: '🔴', name: 'Red Coral', planet: 'Mars' }].map(s => (
+                {[
+                  { emoji: '💛', name: 'Yellow Sapphire', planet: 'Jupiter' },
+                  { emoji: '🟢', name: 'Emerald',         planet: 'Mercury' },
+                  { emoji: '🔴', name: 'Red Coral',       planet: 'Mars'    },
+                ].map(s => (
                   <div key={s.name} className={styles.stoneCard}>
                     <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{s.emoji}</div>
                     <div style={{ fontFamily: 'Cinzel,serif', fontSize: '0.85rem', color: 'var(--white)' }}>{s.name}</div>
