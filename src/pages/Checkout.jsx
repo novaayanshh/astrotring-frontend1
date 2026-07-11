@@ -14,7 +14,6 @@ export default function Checkout() {
   const [placed, setPlaced] = useState(false);
   const [error, setError] = useState("");
 
-  /* ── Address state ── */
   const [address, setAddress] = useState({
     name: "",
     phone: "",
@@ -25,7 +24,6 @@ export default function Checkout() {
     pincode: "",
   });
 
-  /* ── Payment state ── */
   const [payMethod, setPayMethod] = useState("upi"); // "upi" | "card" | "cod"
   const [upiId, setUpiId] = useState("");
   const [card, setCard] = useState({ number: "", name: "", expiry: "", cvv: "" });
@@ -34,7 +32,6 @@ export default function Checkout() {
   const shipping = subtotal > 0 ? (subtotal >= 10000 ? 0 : 250) : 0;
   const total = subtotal + shipping;
 
-  /* ── Validation per step ── */
   const validateAddress = () => {
     const { name, phone, line1, city, state, pincode } = address;
     if (!name || !phone || !line1 || !city || !state || !pincode) {
@@ -100,7 +97,6 @@ export default function Checkout() {
     }, 1600);
   };
 
-  /* ── Order success screen ── */
   if (placed) {
     return (
       <div className={styles.page}>

@@ -1,5 +1,5 @@
 .hero { min-height: calc(100vh - 64px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; position: relative; z-index: 1; }
-.heroEyebrow { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; opacity: 0.8; }
+.heroEyebrow { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; opacity: 0.9; }
 .heroTitle { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 6vw, 5rem); color: var(--white); line-height: 1.1; margin-bottom: 1.5rem; }
 .gold { color: var(--gold); }
 .heroSub { font-size: 1.05rem; color: var(--parchment-muted); max-width: 520px; line-height: 1.8; margin-bottom: 3rem; }
@@ -7,45 +7,71 @@
 .heroScroll { position: absolute; bottom: 2rem; color: var(--gold); font-size: 1.5rem; animation: bounce 2s infinite; }
 @keyframes bounce { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-8px); } }
 
-.zodiacStrip { background: var(--indigo-mid); border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 1rem 0; overflow: hidden; }
+.quickPills { background: #FFFFFF; border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); padding: 1rem 0; position: relative; z-index: 1; }
+.pillsScroll { display: flex; gap: 0.75rem; overflow-x: auto; padding: 0 2rem; scrollbar-width: none; }
+.pillsScroll::-webkit-scrollbar { display: none; }
+.pill { flex-shrink: 0; display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; padding: 0.6rem 1.25rem; border-radius: 100px; border: 1px solid rgba(245,137,31,0.3); color: var(--gold-dark); font-size: 0.8rem; letter-spacing: 0.3px; background: rgba(245,137,31,0.07); cursor: pointer; transition: all 0.25s; }
+.pill:hover { background: rgba(245,137,31,0.15); border-color: var(--gold); transform: translateY(-2px); }
+
+.zodiacStrip { background: #FFFFFF; border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); padding: 1rem 0; overflow: hidden; }
 .zodiacScroll { display: flex; gap: 2rem; animation: scrollX 22s linear infinite; white-space: nowrap; width: max-content; }
-.zodiacItem { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--gold); letter-spacing: 1px; }
-.dot { opacity: 0.3; margin-left: 1rem; }
+.zodiacItem { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--gold-dark); letter-spacing: 1px; }
+.dot { opacity: 0.4; margin-left: 1rem; }
 @keyframes scrollX { from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
 
 .catSection { background: var(--cosmic); position: relative; z-index: 1; }
 .catGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
-.catCard { background: var(--card-bg); border: 1px solid rgba(201,168,76,0.2); padding: 2rem 1.5rem; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }
-.catCard:hover { border-color: var(--gold); transform: translateY(-4px); }
+.catCard { background: #FFFFFF; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 16px rgba(0,0,0,0.04); padding: 2rem 1.5rem; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }
+.catCard:hover { border-color: var(--gold); box-shadow: 0 10px 28px rgba(245,137,31,0.14); transform: translateY(-4px); }
 .catIcon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
 .catName { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--white); margin-bottom: 0.5rem; }
-.catCount { font-size: 0.8rem; color: var(--gold); opacity: 0.7; }
+.catCount { font-size: 0.8rem; color: var(--gold); opacity: 0.85; }
 
-.featuredSection { background: var(--indigo-mid); border-top: 1px solid rgba(201,168,76,0.1); border-bottom: 1px solid rgba(201,168,76,0.1); position: relative; z-index: 1; }
+.astroSection { background: var(--cosmic); position: relative; z-index: 1; }
+.astroGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+.astroCard { background: #FFFFFF; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 16px rgba(0,0,0,0.04); padding: 1.75rem 1.5rem; text-align: center; transition: all 0.3s; }
+.astroCard:hover { border-color: var(--gold); box-shadow: 0 10px 28px rgba(245,137,31,0.14); transform: translateY(-4px); }
+.astroAvatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--amethyst), var(--amethyst-light)); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--white); margin: 0 auto 1rem; position: relative; }
+.astroOnline { position: absolute; bottom: 2px; right: 2px; width: 12px; height: 12px; border-radius: 50%; background: #4caf50; border: 2px solid #fff; }
+.astroName { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--white); margin-bottom: 0.3rem; }
+.astroExpertise { font-size: 0.8rem; color: var(--gold-dark); opacity: 0.9; margin-bottom: 0.5rem; }
+.astroMeta { display: flex; justify-content: center; gap: 1rem; font-size: 0.75rem; color: var(--parchment-muted); margin-bottom: 1rem; }
+.astroPrice { color: var(--gold); font-weight: 600; }
+.astroBtn { width: 100%; background: transparent; border-radius: 100px; border: 1.5px solid var(--gold); color: var(--gold); padding: 0.6rem; font-size: 0.8rem; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s; }
+.astroBtn:hover { background: var(--gold); color: #fff; }
+
+.featuredSection { background: #FFFFFF; border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); position: relative; z-index: 1; }
 .prodGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
 
-.quiz { background: var(--indigo-mid); border: 1px solid rgba(201,168,76,0.2); max-width: 700px; margin: 0 auto; padding: 3rem; position: relative; z-index: 1; }
+.quiz { background: #FFFFFF; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 8px 30px rgba(0,0,0,0.05); max-width: 700px; margin: 0 auto; padding: 3rem; position: relative; z-index: 1; }
 .quizTitle { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 1rem; text-align: center; }
 .quizSub { color: var(--parchment-muted); text-align: center; margin-bottom: 2rem; line-height: 1.8; font-size: 0.9rem; }
 .zodiacGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
-.zodiacBtn { background: transparent; border: 1px solid rgba(201,168,76,0.25); color: var(--parchment-muted); padding: 0.75rem 0.5rem; transition: all 0.3s; font-size: 0.82rem; text-align: center; }
-.zodiacBtn:hover, .zodiacActive { background: rgba(201,168,76,0.1); border-color: var(--gold); color: var(--gold); }
+.zodiacBtn { background: transparent; border-radius: 10px; border: 1px solid rgba(245,137,31,0.25); color: var(--parchment-muted); padding: 0.75rem 0.5rem; transition: all 0.3s; font-size: 0.82rem; text-align: center; }
+.zodiacBtn:hover, .zodiacActive { background: rgba(245,137,31,0.1); border-color: var(--gold); color: var(--gold-dark); }
 .zSign { font-size: 1.4rem; display: block; margin-bottom: 4px; }
-.quizResult { margin-top: 1.5rem; padding: 1.5rem; background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.2); }
-.qrTitle { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 0.5rem; font-size: 1rem; }
+.quizResult { margin-top: 1.5rem; padding: 1.5rem; border-radius: 12px; background: rgba(245,137,31,0.06); border: 1px solid rgba(245,137,31,0.2); }
+.qrTitle { font-family: 'Cinzel', serif; color: var(--gold-dark); margin-bottom: 0.5rem; font-size: 1rem; }
 .qrText { color: var(--parchment-muted); line-height: 1.8; font-size: 0.9rem; }
 
-.trustBar { background: var(--indigo-mid); border-top: 1px solid rgba(201,168,76,0.1); border-bottom: 1px solid rgba(201,168,76,0.1); padding: 2.5rem 2rem; position: relative; z-index: 1; }
+.trustBar { background: #FFFFFF; border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); padding: 2.5rem 2rem; position: relative; z-index: 1; }
 .trustGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; text-align: center; }
 .trustIcon { font-size: 2rem; color: var(--gold); margin-bottom: 0.75rem; display: block; }
 .trustLabel { font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--white); margin-bottom: 0.3rem; }
 .trustSub { font-size: 0.8rem; color: var(--parchment-muted); }
 
 .testiGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
-.testiCard { background: var(--card-bg); border: 1px solid rgba(201,168,76,0.15); padding: 2rem; }
+.testiCard { background: #FFFFFF; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 16px rgba(0,0,0,0.04); padding: 2rem; }
 .testiStars { color: var(--gold); margin-bottom: 1rem; font-size: 0.9rem; }
 .testiText { color: var(--parchment-muted); line-height: 1.8; font-style: italic; margin-bottom: 1.5rem; font-size: 0.92rem; }
 .testiAuthor { display: flex; align-items: center; gap: 0.75rem; }
-.testiAvatar { width: 40px; height: 40px; border-radius: 50%; background: var(--amethyst); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--white); flex-shrink: 0; }
+.testiAvatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--amethyst), var(--amethyst-light)); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--white); flex-shrink: 0; }
 .testiName { font-size: 0.88rem; color: var(--white); }
-.testiMeta { font-size: 0.75rem; color: var(--gold); opacity: 0.7; }
+.testiMeta { font-size: 0.75rem; color: var(--gold); opacity: 0.8; }
+
+.supportWidget { position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 200; display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem; }
+.supportTip { position: relative; background: #FFFFFF; border-radius: 14px; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.12); padding: 0.9rem 1.1rem; max-width: 220px; }
+.supportTipTitle { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--gold-dark); margin-bottom: 0.25rem; }
+.supportTipText { font-size: 0.75rem; color: var(--parchment-muted); }
+.supportClose { position: absolute; top: -8px; right: -8px; width: 20px; height: 20px; border-radius: 50%; background: #FFFFFF; border: 1px solid rgba(0,0,0,0.1); color: var(--gold-dark); font-size: 0.7rem; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.supportBtn { width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; box-shadow: 0 4px 16px rgba(37,211,102,0.4); }

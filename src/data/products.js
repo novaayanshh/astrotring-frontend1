@@ -50,3 +50,19 @@ export const SERVICES = [
   { emoji: '📅', name: 'Muhurta Selection', desc: 'Find the most auspicious time for your wedding, business launch, or property purchase using Vedic muhurta calculations.', price: '₹999 / event' },
   { emoji: '🌟', name: 'Annual Forecast', desc: 'Your complete yearly astrology report covering all major transits, Dasha periods, and month-by-month predictions for career, health, love and finance.', price: '₹2,999 / year' },
 ];
+// Append these two exports to the end of src/data/products.js
+
+export const ASTROLOGERS = [
+  { id: 1, name: 'Acharya Devendra', initials: 'AD', expertise: 'Vedic · Marriage', experience: 18, rating: 4.9, price: 25, online: true },
+  { id: 2, name: 'Priya Joshi', initials: 'PJ', expertise: 'Love · Relationships', experience: 9, rating: 4.8, price: 18, online: true },
+  { id: 3, name: 'Rohan Mehta', initials: 'RM', expertise: 'Career · Finance', experience: 14, rating: 4.7, price: 22, online: false },
+  { id: 4, name: 'Aditi Rao', initials: 'AR', expertise: 'Vedic · Kundali', experience: 11, rating: 4.9, price: 20, online: true },
+];
+
+export const QUICK_LINKS = [
+  { label: 'Compatibility', icon: '✦' },
+  { label: 'Horoscopes', icon: '✦' },
+  { label: 'Chat to Astrologer', icon: '✦' },
+  { label: 'Kundali Match', icon: '✦' },
+  { label: 'Tarot Reading', icon: '✦' },
+];

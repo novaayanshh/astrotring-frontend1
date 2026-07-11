@@ -21,7 +21,6 @@ export default function Navbar() {
     { to: '/account',  label: 'Account'  },
   ];
 
-  // Filter products by query
   const results = query.trim().length > 0
     ? PRODUCTS.filter(p =>
         p.name.toLowerCase().includes(query.toLowerCase()) ||
@@ -30,13 +29,11 @@ export default function Navbar() {
       ).slice(0, 6)
     : [];
 
-  // Auto-focus input when search opens
   useEffect(() => {
     if (searchOpen) inputRef.current?.focus();
     else setQuery('');
   }, [searchOpen]);
 
-  // Close on outside click
   useEffect(() => {
     const handler = (e) => {
       if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
@@ -47,7 +44,6 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  // Close on Escape
   useEffect(() => {
     const handler = (e) => { if (e.key === 'Escape') setSearchOpen(false); };
     document.addEventListener('keydown', handler);
