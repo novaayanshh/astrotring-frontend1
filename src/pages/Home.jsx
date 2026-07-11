@@ -96,7 +96,6 @@ function BirthstoneQuiz() {
     </div>
   );
 }
-
 function SupportWidget() {
   const [dismissed, setDismissed] = useState(false);
   const navigate = useNavigate();
@@ -117,7 +116,6 @@ function SupportWidget() {
     </div>
   );
 }
-
 export default function Home() {
   const navigate = useNavigate();
   const featured = PRODUCTS.filter(p => FEATURED_IDS.includes(p.id));
