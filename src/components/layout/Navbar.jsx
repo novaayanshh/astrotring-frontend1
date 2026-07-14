@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
+﻿import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FiSearch, FiShoppingCart, FiUser, FiArrowRight, FiZap } from 'react-icons/fi';
 import { useCart } from '../../context/CartContext';
 import { PRODUCTS } from '../../data/products';
 import styles from './Navbar.module.css';
@@ -67,7 +68,7 @@ export default function Navbar() {
 
   return (
     <nav className={styles.nav}>
-      <Link to="/" className={styles.logo}>✦ Astrotring</Link>
+      <Link to="/" className={styles.logo}><FiZap size={16} style={{ marginRight: '0.35rem' }} /> Astrotring</Link>
 
       <ul className={styles.links}>
         {links.map(l => (
@@ -80,8 +81,6 @@ export default function Navbar() {
       </ul>
 
       <div className={styles.actions}>
-
-        {/* ── Search ── */}
         <div className={styles.searchWrap} ref={wrapperRef}>
           <button
             className={`${styles.iconBtn} ${searchOpen ? styles.iconBtnActive : ''}`}
@@ -89,7 +88,7 @@ export default function Navbar() {
             title="Search"
             aria-label="Search"
           >
-            🔍
+            <FiSearch size={18} />
           </button>
 
           {searchOpen && (
@@ -100,13 +99,12 @@ export default function Navbar() {
                   className={styles.searchInput}
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search gems, rings, stones…"
+                  placeholder="Search gems, rings, stonesâ€¦"
                   autoComplete="off"
                 />
-                <button type="submit" className={styles.searchSubmit} aria-label="Go">→</button>
+                <button type="submit" className={styles.searchSubmit} aria-label="Go"><FiArrowRight size={16} /></button>
               </form>
 
-              {/* Live results */}
               {results.length > 0 && (
                 <ul className={styles.searchResults}>
                   {results.map(p => (
@@ -118,7 +116,7 @@ export default function Navbar() {
                         <span className={styles.srEmoji}>{p.emoji}</span>
                         <span className={styles.srInfo}>
                           <span className={styles.srName}>{p.name}</span>
-                          <span className={styles.srPrice}>₹{p.price.toLocaleString('en-IN')}</span>
+                          <span className={styles.srPrice}>â‚¹{p.price.toLocaleString('en-IN')}</span>
                         </span>
                       </button>
                     </li>
@@ -126,7 +124,6 @@ export default function Navbar() {
                 </ul>
               )}
 
-              {/* No results */}
               {query.trim().length > 0 && results.length === 0 && (
                 <p className={styles.searchEmpty}>No gems found for "{query}"</p>
               )}
@@ -135,11 +132,11 @@ export default function Navbar() {
         </div>
 
         <button className={styles.iconBtn} onClick={() => setIsCartOpen(true)} title="Cart">
-          🛒
+          <FiShoppingCart size={18} />
           {cartCount > 0 && <span className={styles.badge}>{cartCount}</span>}
         </button>
 
-        <Link to="/account" className={styles.iconBtn} title="Account">👤</Link>
+        <Link to="/account" className={styles.iconBtn} title="Account"><FiUser size={18} /></Link>
       </div>
     </nav>
   );

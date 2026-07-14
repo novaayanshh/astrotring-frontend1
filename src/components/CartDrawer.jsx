@@ -15,7 +15,7 @@ export default function CartDrawer({ open, onClose }) {
   const navigate = useNavigate();
 
   const handleCheckout = () => {
-    showToast('✦ Proceeding to checkout…');
+    showToast('Proceeding to checkout…');
     onClose();
     navigate('/checkout');
   };

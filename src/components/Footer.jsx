@@ -1,29 +1,22 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   FiInstagram,
   FiYoutube,
   FiMail,
   FiPhone,
-  FiChevronRight,
+  FiZap,
 } from 'react-icons/fi';
 import './Footer.css';
-
-const socialLinks = [
-  { icon: <FaInstagram />, label: 'Instagram', href: 'https://www.instagram.com/' },
-  { icon: <FaTiktok />, label: 'TikTok', href: 'https://www.tiktok.com/' },
-  { icon: <FaYoutube />, label: 'YouTube', href: 'https://www.youtube.com/' },
-  { icon: <FaEnvelope />, label: 'Email', href: 'mailto:hello@astrotring.com' },
-];
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-grid">
         <div className="footer-brand-col">
-          <div className="footer-logo">✦ Astrotring</div>
+          <div className="footer-logo"><FiZap size={16} style={{ marginRight: '0.4rem' }} /> Astrotring</div>
           <p className="footer-tagline">
-            Bridging ancient Vedic wisdom with authentic gemstones — every piece energised for your unique cosmic journey.
+            Bridging ancient Vedic wisdom with authentic gemstones â€” every piece energised for your unique cosmic journey.
           </p>
           <div className="footer-socials">
             <a href="#"><FiInstagram size={20} /></a>
@@ -36,7 +29,7 @@ export default function Footer() {
         <div>
           <div className="footer-heading">Shop</div>
           <ul className="footer-links">
-            {['Gemstone Rings', 'Bracelets', 'Rudraksha Malas', 'Crystals & Décor', 'Yantras'].map((l) => (
+            {['Gemstone Rings', 'Bracelets', 'Rudraksha Malas', 'Crystals & DÃ©cor', 'Yantras'].map((l) => (
               <li key={l}><Link to="/shop">{l}</Link></li>
             ))}
           </ul>
@@ -62,9 +55,10 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span>© 2026 Astrotring. All rights reserved.</span>
-        <span>Made with ✦ for cosmic seekers</span>
+        <span>Â© 2026 Astrotring. All rights reserved.</span>
+        <span>Made with <FiZap size={14} style={{ margin: '0 0.25rem' }} /> for cosmic seekers</span>
       </div>
     </footer>
   );
 }
+

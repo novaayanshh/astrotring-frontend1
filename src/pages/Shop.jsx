@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { FiFilter, FiStar, FiChevronDown } from 'react-icons/fi';
+import { FiFilter, FiZap, FiStar } from 'react-icons/fi';
 import { PRODUCTS } from '../data/products';
 import ProductCard from '../components/ui/ProductCard';
 import Footer from '../components/layout/Footer';
@@ -38,7 +38,7 @@ export default function Shop() {
       <div className={styles.layout}>
         {/* FILTERS */}
         <aside className={styles.sidebar}>
-          <div className={styles.filterTitle}>✦ Refine</div>
+          <div className={styles.filterTitle}><FiZap size={16} style={{ marginRight: '0.35rem' }} /> Refine</div>
 
           <div className={styles.filterGroup}>
             <div className={styles.filterGroupLabel}>Category</div>
@@ -69,7 +69,7 @@ export default function Shop() {
             <div className={styles.filterGroupLabel}>Max Price</div>
             <input type="range" className={styles.priceRange} min={500} max={50000} step={500}
               value={maxPrice} onChange={e => setMaxPrice(Number(e.target.value))} />
-            <div className={styles.priceLabels}><span>₹500</span><span>₹{maxPrice.toLocaleString('en-IN')}</span></div>
+            <div className={styles.priceLabels}><span>â‚¹500</span><span>â‚¹{maxPrice.toLocaleString('en-IN')}</span></div>
           </div>
 
           <div className={styles.filterGroup}>
@@ -78,7 +78,7 @@ export default function Shop() {
               <div key={r} className={`${styles.filterOpt} ${minRating === r ? styles.selected : ''}`}
                 onClick={() => setMinRating(r)}>
                 <div className={styles.filterCheck} />
-                {r === 0 ? 'Any' : `★ ${r}+`}
+                {r === 0 ? 'Any' : <><FiStar size={14} style={{ marginRight: '0.3rem' }} /> {r}+</>}
               </div>
             ))}
           </div>
@@ -105,7 +105,7 @@ export default function Shop() {
           </div>
           {filtered.length === 0 ? (
             <div className={styles.noResults}>
-              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔮</div>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}><FiZap /></div>
               <p>No products match your filters.</p>
               <button className="btn-outline" style={{ marginTop: '1rem' }} onClick={() => { setSelectedCat('All'); setSelectedZodiac('All'); }}>
                 Clear Filters
@@ -122,3 +122,4 @@ export default function Shop() {
     </div>
   );
 }
+

@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
+import { FiZap } from 'react-icons/fi';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -6,7 +7,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.grid}>
         <div>
-          <div className={styles.brand}>✦ Astrotring</div>
+          <div className={styles.brand}><FiZap size={16} style={{ marginRight: '0.4rem' }} /> Astrotring</div>
           <p className={styles.tagline}>
             Bridging ancient Vedic wisdom with authentic gemstones - every piece energised for your unique cosmic journey.
           </p>
@@ -17,7 +18,7 @@ export default function Footer() {
             <li><Link to="/shop">Gemstone Rings</Link></li>
             <li><Link to="/shop">Bracelets</Link></li>
             <li><Link to="/shop">Rudraksha Malas</Link></li>
-            <li><Link to="/shop">Crystals &amp; Décor</Link></li>
+            <li><Link to="/shop">Crystals &amp; DÃ©cor</Link></li>
             <li><Link to="/shop">Yantras</Link></li>
           </ul>
         </div>
@@ -42,8 +43,9 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.bottom}>
-        © 2026 Astrotring. All rights reserved. Made with ✦ for cosmic seekers.
+        Â© 2026 Astrotring. All rights reserved. Made with <FiZap size={14} style={{ margin: '0 0.25rem' }} /> for cosmic seekers.
       </div>
     </footer>
   );
 }
+

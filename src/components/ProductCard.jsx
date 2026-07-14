@@ -17,7 +17,7 @@ export default function ProductCard({ product }) {
 
   const handleWishlist = (e) => {
     e.stopPropagation();
-    showToast('✦ Added to Wishlist');
+    showToast('Added to Wishlist');
   };
 
   return (

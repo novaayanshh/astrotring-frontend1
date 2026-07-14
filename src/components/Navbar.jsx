@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   FiSearch,
   FiShoppingCart,
   FiUser,
-  FiHeart,
   FiMenu,
+  FiZap,
   FiX,
 } from 'react-icons/fi';
 import { useCart } from '../context/CartContext';
@@ -39,7 +39,7 @@ export default function Navbar() {
   return (
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-        <Link to="/" className="nav-logo">✦ Astrotring</Link>
+        <Link to="/" className="nav-logo"><FiZap size={16} style={{ marginRight: '0.35rem' }} /> Astrotring</Link>
 
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           {navLinks.map(l => (
@@ -62,7 +62,7 @@ export default function Navbar() {
             className="nav-cart"
             onClick={() => setCartOpen(true)}
             title="Cart"
-            aria-label={`Cart — ${cartCount} items`}
+            aria-label={`Cart â€” ${cartCount} items`}
           >
             <FiShoppingCart size={20} />
             {cartCount > 0 && (
@@ -86,3 +86,4 @@ export default function Navbar() {
     </>
   );
 }
+

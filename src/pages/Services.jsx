@@ -1,4 +1,5 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
+import { FiZap, FiX } from 'react-icons/fi';
 import { SERVICES } from '../data/products';
 import { useCart } from '../context/CartContext';
 import Footer from '../components/layout/Footer';
@@ -45,7 +46,7 @@ export default function Services() {
     setTimeout(() => {
       setLoading(false);
       setStep('success');
-      showNotif(`✦ ${modal.name} booked successfully!`);
+      showNotif(`${modal.name} booked successfully!`);
     }, 1400);
   };
 
@@ -106,13 +107,13 @@ export default function Services() {
 
       <Footer />
 
-      {/* ── BOOKING MODAL ── */}
+      {/* â”€â”€ BOOKING MODAL â”€â”€ */}
       {modal && (
         <div className={styles.overlay} onClick={closeModal}>
           <div className={styles.modalCard} onClick={(e) => e.stopPropagation()}>
 
             {/* Close */}
-            <button className={styles.modalClose} onClick={closeModal} aria-label="Close">✕</button>
+            <button className={styles.modalClose} onClick={closeModal} aria-label="Close"><FiX size={18} /></button>
 
             {step === 'form' && (
               <>
@@ -148,7 +149,7 @@ export default function Services() {
                   </div>
 
                   <div className={styles.mSectionLabel}>
-                    ✦ Birth Details <span className={styles.mOptional}>(for accurate reading)</span>
+                    <FiZap size={14} style={{ marginRight: '0.35rem' }} /> Birth Details <span className={styles.mOptional}>(for accurate reading)</span>
                   </div>
 
                   <div className={styles.mRow2}>
@@ -178,7 +179,7 @@ export default function Services() {
 
             {step === 'success' && (
               <div className={styles.successBox}>
-                <div className={styles.successStar}>✦</div>
+                <div className={styles.successStar}><FiZap size={18} /></div>
                 <h2 className={styles.successTitle}>Booking Confirmed!</h2>
                 <p className={styles.successText}>
                   Your session for <strong>{modal.name}</strong> has been received.

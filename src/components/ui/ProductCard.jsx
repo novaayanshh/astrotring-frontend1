@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { FiHeart, FiShoppingCart, FiStar } from 'react-icons/fi';
 import { useCart } from '../../context/CartContext';
 import styles from './ProductCard.module.css';
 
@@ -17,13 +18,15 @@ export default function ProductCard({ product }) {
           onClick={e => { e.stopPropagation(); toggleWishlist(product); }}
           title={inWishlist ? 'Remove from wishlist' : 'Add to wishlist'}
         >
-          {inWishlist ? '♥' : '♡'}
+          <FiHeart size={16} style={{ fill: inWishlist ? 'currentColor' : 'none' }} />
         </button>
       </div>
       <div className={styles.info}>
         <div className={styles.cat}>{product.cat}</div>
         <div className={styles.stars}>
-          {'★'.repeat(Math.floor(product.rating))}{'☆'.repeat(5 - Math.floor(product.rating))}
+          {Array.from({ length: 5 }, (_, i) => (
+            <FiStar key={i} size={14} style={{ opacity: i < Math.floor(product.rating) ? 1 : 0.35 }} />
+          ))}
           <span className={styles.reviewCount}>({product.reviews})</span>
         </div>
         <div className={styles.name}>{product.name}</div>
@@ -36,7 +39,7 @@ export default function ProductCard({ product }) {
             className={styles.cartBtn}
             onClick={e => { e.stopPropagation(); addToCart(product); }}
           >
-            + Cart
+            <FiShoppingCart size={14} style={{ marginRight: '0.3rem' }} /> Cart
           </button>
         </div>
       </div>

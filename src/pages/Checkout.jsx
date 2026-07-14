@@ -1,10 +1,14 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
-  FiMapPin,
-  FiTruck,
   FiCheckCircle,
   FiChevronRight,
+  FiCreditCard,
+  FiDollarSign,
+  FiMapPin,
+  FiSmartphone,
+  FiZap,
+  FiTruck,
 } from 'react-icons/fi';
 import { useCart } from '../context/CartContext';
 import styles from "./Checkout.module.css";
@@ -160,11 +164,11 @@ export default function Checkout() {
         {/* Header */}
         <div className={styles.header}>
           <Link to="/" className={styles.logo}>
-            <span className={styles.logoIcon}>🔮</span>
+            <span className={styles.logoIcon}><FiZap size={18} /></span>
             <span className={styles.logoText}>Astrotring</span>
           </Link>
           <Link to="/shop" className={styles.backLink}>
-            ← Back to Shop
+            â† Back to Shop
           </Link>
         </div>
 
@@ -177,7 +181,7 @@ export default function Checkout() {
                   i === step ? styles.stepActive : i < step ? styles.stepDone : ""
                 }`}
               >
-                {i < step ? "✓" : i + 1}
+                {i < step ? <FiCheckCircle size={14} /> : i + 1}
               </div>
               <span
                 className={`${styles.stepLabel} ${i === step ? styles.stepLabelActive : ""}`}
@@ -192,7 +196,7 @@ export default function Checkout() {
         </div>
 
         <div className={styles.grid}>
-          {/* ── Main panel ── */}
+          {/* â”€â”€ Main panel â”€â”€ */}
           <div className={styles.mainPanel}>
             {error && <p className={styles.error}>{error}</p>}
 
@@ -279,9 +283,9 @@ export default function Checkout() {
 
                 <div className={styles.payOptions}>
                   {[
-                    { id: "upi", label: "UPI", icon: "📱" },
-                    { id: "card", label: "Credit / Debit Card", icon: "💳" },
-                    { id: "cod", label: "Cash on Delivery", icon: "💰" },
+                    { id: "upi", label: "UPI", icon: <FiSmartphone /> },
+                    { id: "card", label: "Credit / Debit Card", icon: <FiCreditCard /> },
+                    { id: "cod", label: "Cash on Delivery", icon: <FiDollarSign /> },
                   ].map((opt) => (
                     <label
                       key={opt.id}
@@ -382,12 +386,12 @@ export default function Checkout() {
                     </button>
                   </div>
                   <p className={styles.reviewText}>
-                    {address.name} · {address.phone}
+                    {address.name} Â· {address.phone}
                     <br />
                     {address.line1}
                     {address.line2 ? `, ${address.line2}` : ""}
                     <br />
-                    {address.city}, {address.state} – {address.pincode}
+                    {address.city}, {address.state} â€“ {address.pincode}
                   </p>
                 </div>
 
@@ -399,7 +403,7 @@ export default function Checkout() {
                     </button>
                   </div>
                   <p className={styles.reviewText}>
-                    {payMethod === "upi" && `UPI — ${upiId}`}
+                    {payMethod === "upi" && `UPI â€” ${upiId}`}
                     {payMethod === "card" &&
                       `Card ending in ${card.number.replace(/\s/g, "").slice(-4) || "----"}`}
                     {payMethod === "cod" && "Cash on Delivery"}
@@ -413,9 +417,9 @@ export default function Checkout() {
                   {cartItems?.map((item) => (
                     <div key={item.id} className={styles.reviewItem}>
                       <span>
-                        {item.name} × {item.qty}
+                        {item.name} Ã— {item.qty}
                       </span>
-                      <span>₹{(item.price * item.qty).toLocaleString("en-IN")}</span>
+                      <span>â‚¹{(item.price * item.qty).toLocaleString("en-IN")}</span>
                     </div>
                   ))}
                 </div>
@@ -448,15 +452,15 @@ export default function Checkout() {
             </div>
           </div>
 
-          {/* ── Order summary sidebar ── */}
+          {/* â”€â”€ Order summary sidebar â”€â”€ */}
           <div className={styles.summaryPanel}>
             <h3 className={styles.panelTitle}>Order Summary</h3>
             {cartItems?.map((item) => (
               <div key={item.id} className={styles.summaryItem}>
                 <span className={styles.summaryItemName}>
-                  {item.name} <span className={styles.qty}>× {item.qty}</span>
+                  {item.name} <span className={styles.qty}>Ã— {item.qty}</span>
                 </span>
-                <span>₹{(item.price * item.qty).toLocaleString("en-IN")}</span>
+                <span>â‚¹{(item.price * item.qty).toLocaleString("en-IN")}</span>
               </div>
             ))}
 
@@ -464,18 +468,18 @@ export default function Checkout() {
 
             <div className={styles.summaryRow}>
               <span>Subtotal</span>
-              <span>₹{subtotal.toLocaleString("en-IN")}</span>
+              <span>â‚¹{subtotal.toLocaleString("en-IN")}</span>
             </div>
             <div className={styles.summaryRow}>
               <span>Shipping</span>
-              <span>{shipping === 0 ? "Free" : `₹${shipping}`}</span>
+              <span>{shipping === 0 ? "Free" : `â‚¹${shipping}`}</span>
             </div>
 
             <div className={styles.summaryDivider} />
 
             <div className={styles.summaryTotal}>
               <span>Total</span>
-              <span>₹{total.toLocaleString("en-IN")}</span>
+              <span>â‚¹{total.toLocaleString("en-IN")}</span>
             </div>
           </div>
         </div>

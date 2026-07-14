@@ -1,5 +1,6 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FiEye, FiEyeOff, FiZap } from 'react-icons/fi';
 import styles from "./Login.module.css";
 
 export default function Login() {
@@ -86,7 +87,7 @@ export default function Login() {
       <div className={styles.card}>
         {/* Logo */}
         <Link to="/" className={styles.logo}>
-          <span className={styles.logoIcon}>🔮</span>
+          <span className={styles.logoIcon}><FiZap size={20} /></span>
           <span className={styles.logoText}>Astrotring</span>
         </Link>
 
@@ -106,11 +107,11 @@ export default function Login() {
           </button>
         </div>
 
-        {/* ─── LOGIN ─── */}
+        {/* â”€â”€â”€ LOGIN â”€â”€â”€ */}
         {mode === "login" && (
           <form className={styles.form} onSubmit={handleLogin}>
             <p className={styles.subtitle}>
-              Welcome back — the stars are aligned for you ✨
+              Welcome back â€” the stars are aligned for you <FiZap size={14} />
             </p>
 
             {error && <p className={styles.error}>{error}</p>}
@@ -134,7 +135,7 @@ export default function Login() {
                 <input
                   type={showPass ? "text" : "password"}
                   className={styles.input}
-                  placeholder="••••••••"
+                  placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                   value={loginData.password}
                   onChange={(e) =>
                     setLoginData({ ...loginData, password: e.target.value })
@@ -146,7 +147,7 @@ export default function Login() {
                   onClick={() => setShowPass(!showPass)}
                   aria-label="Toggle password visibility"
                 >
-                  {showPass ? "🙈" : "👁️"}
+                  {showPass ? <FiEyeOff size={16} /> : <FiEye size={16} />}
                 </button>
               </div>
             </label>
@@ -200,11 +201,11 @@ export default function Login() {
           </form>
         )}
 
-        {/* ─── REGISTER ─── */}
+        {/* â”€â”€â”€ REGISTER â”€â”€â”€ */}
         {mode === "register" && (
           <form className={styles.form} onSubmit={handleRegister}>
             <p className={styles.subtitle}>
-              Begin your cosmic journey — it's free 🌙
+              Begin your cosmic journey â€” it's free <FiMoon size={14} />
             </p>
 
             {error && <p className={styles.error}>{error}</p>}
@@ -250,7 +251,7 @@ export default function Login() {
                     onClick={() => setShowPass(!showPass)}
                     aria-label="Toggle password"
                   >
-                    {showPass ? "🙈" : "👁️"}
+                    {showPass ? <FiEyeOff size={16} /> : <FiEye size={16} />}
                   </button>
                 </div>
               </label>
@@ -270,7 +271,7 @@ export default function Login() {
             </div>
 
             <div className={styles.sectionLabel}>
-              ✦ Birth Details
+              <FiZap size={14} style={{ marginRight: '0.35rem' }} /> Birth Details
               <span className={styles.optional}> (for your free Kundali)</span>
             </div>
 

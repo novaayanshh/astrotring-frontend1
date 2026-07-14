@@ -1,5 +1,6 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { FiMessageCircle, FiStar, FiZap, FiShield, FiMoon, FiRefreshCw, FiTruck } from 'react-icons/fi';
 import { PRODUCTS, CATEGORIES, ZODIAC_DATA, TESTIMONIALS, ASTROLOGERS, QUICK_LINKS } from '../data/products';
 import ProductCard from '../components/ui/ProductCard';
 import Footer from '../components/layout/Footer';
@@ -13,7 +14,7 @@ function ZodiacStrip() {
     <div className={styles.zodiacStrip}>
       <div className={styles.zodiacScroll}>
         {doubled.map((z, i) => (
-          <span key={i} className={styles.zodiacItem}>{z.sign} {z.name} <span className={styles.dot}>✦</span></span>
+          <span key={i} className={styles.zodiacItem}>{z.sign} {z.name} <span className={styles.dot}><FiZap size={12} /></span></span>
         ))}
       </div>
     </div>
@@ -55,10 +56,10 @@ function AstrologersSection() {
             <div className={styles.astroExpertise}>{a.expertise}</div>
             <div className={styles.astroMeta}>
               <span>{a.experience} yrs exp</span>
-              <span>★ {a.rating}</span>
+              <span><FiStar size={14} style={{ marginRight: '0.2rem' }} /> {a.rating}</span>
             </div>
             <button className={styles.astroBtn} onClick={() => navigate('/services')}>
-              Chat · <span className={styles.astroPrice}>₹{a.price}/min</span>
+              Chat Â· <span className={styles.astroPrice}>â‚¹{a.price}/min</span>
             </button>
           </div>
         ))}
@@ -73,7 +74,7 @@ function BirthstoneQuiz() {
   const sel = ZODIAC_DATA.find(z => z.name === activeZodiac);
   return (
     <div className={styles.quiz}>
-      <div className={styles.quizTitle}>✦ Find Your Birthstone</div>
+      <div className={styles.quizTitle}><FiZap size={16} style={{ marginRight: '0.4rem' }} /> Find Your Birthstone</div>
       <p className={styles.quizSub}>Select your zodiac sign to discover the gemstones aligned with your cosmic energy.</p>
       <div className={styles.zodiacGrid}>
         {ZODIAC_DATA.map(z => (
@@ -87,10 +88,10 @@ function BirthstoneQuiz() {
       </div>
       {sel && (
         <div className={styles.quizResult}>
-          <div className={styles.qrTitle}>{sel.sign} {sel.name} · Stone: {sel.gem}</div>
+          <div className={styles.qrTitle}>{sel.sign} {sel.name} Â· Stone: {sel.gem}</div>
           <p className={styles.qrText}>{sel.desc}</p>
           <button className="btn-primary" style={{ marginTop: '1rem', fontSize: '0.8rem', padding: '0.7rem 1.5rem' }}
-            onClick={() => navigate('/shop')}>Shop These Gems →</button>
+            onClick={() => navigate('/shop')}>Shop These Gems â†’</button>
         </div>
       )}
     </div>
@@ -103,8 +104,8 @@ function SupportWidget() {
     <div className={styles.supportWidget}>
       {!dismissed && (
         <div className={styles.supportTip}>
-          <button className={styles.supportClose} onClick={() => setDismissed(true)} aria-label="Dismiss">×</button>
-          <div className={styles.supportTipTitle}>✦ Need guidance?</div>
+          <button className={styles.supportClose} onClick={() => setDismissed(true)} aria-label="Dismiss">Ã—</button>
+          <div className={styles.supportTipTitle}><FiMessageCircle size={16} style={{ marginRight: '0.4rem' }} /> Need guidance?</div>
           <div className={styles.supportTipText}>Chat with an astrologer now</div>
         </div>
       )}
@@ -124,14 +125,14 @@ export default function Home() {
     <div>
       {/* HERO */}
       <section className={styles.hero}>
-        <div className={styles.heroEyebrow}>✦ Celestially Certified ✦</div>
+        <div className={styles.heroEyebrow}><FiZap size={14} style={{ marginRight: '0.35rem' }} /> Celestially Certified <FiZap size={14} style={{ marginLeft: '0.35rem' }} /></div>
         <h1 className={styles.heroTitle}>Wear the <span className={styles.gold}>Cosmos</span>,<br />Command Your Destiny</h1>
-        <p className={styles.heroSub}>Authentic Vedic gemstones, Rudraksha malas, and astrological jewellery — handpicked by expert astrologers for your unique birth chart.</p>
+        <p className={styles.heroSub}>Authentic Vedic gemstones, Rudraksha malas, and astrological jewellery â€” handpicked by expert astrologers for your unique birth chart.</p>
         <div className={styles.heroBtns}>
           <button className="btn-primary" onClick={() => navigate('/shop')}>Explore Collection</button>
           <button className="btn-outline" onClick={() => navigate('/services')}>Get a Reading</button>
         </div>
-        <div className={styles.heroScroll}>↓</div>
+        <div className={styles.heroScroll}>â†“</div>
       </section>
 
       {/* QUICK ACCESS PILLS */}
@@ -185,10 +186,10 @@ export default function Home() {
       <div className={styles.trustBar}>
         <div className={styles.trustGrid}>
           {[
-            { icon: '🔬', label: 'Lab Certified', sub: 'Every gem tested & verified' },
-            { icon: '🌙', label: 'Astrologer Vetted', sub: 'Expert guidance on every pick' },
-            { icon: '🔄', label: '30-Day Returns', sub: 'Hassle-free, no questions' },
-            { icon: '🚀', label: 'Fast Shipping', sub: 'Pan India & international' },
+            { icon: <FiShield />, label: 'Lab Certified', sub: 'Every gem tested & verified' },
+            { icon: <FiMoon />, label: 'Astrologer Vetted', sub: 'Expert guidance on every pick' },
+            { icon: <FiRefreshCw />, label: '30-Day Returns', sub: 'Hassle-free, no questions' },
+            { icon: <FiTruck />, label: 'Fast Shipping', sub: 'Pan India & international' },
           ].map(t => (
             <div key={t.label} className={styles.trustItem}>
               <span className={styles.trustIcon}>{t.icon}</span>
@@ -209,13 +210,13 @@ export default function Home() {
         <div className={styles.testiGrid}>
           {TESTIMONIALS.map(t => (
             <div key={t.name} className={styles.testiCard}>
-              <div className={styles.testiStars}>{'★'.repeat(t.rating)}</div>
+              <div className={styles.testiStars}>{Array.from({ length: t.rating }, (_, i) => <FiStar key={i} size={14} />)}</div>
               <p className={styles.testiText}>"{t.text}"</p>
               <div className={styles.testiAuthor}>
                 <div className={styles.testiAvatar}>{t.initials}</div>
                 <div>
                   <div className={styles.testiName}>{t.name}</div>
-                  <div className={styles.testiMeta}>{t.location} · Verified Purchase</div>
+                  <div className={styles.testiMeta}>{t.location} Â· Verified Purchase</div>
                 </div>
               </div>
             </div>
