@@ -1,6 +1,13 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import {
+  FiShoppingCart,
+  FiTrash2,
+  FiPlus,
+  FiMinus,
+  FiX,
+} from 'react-icons/fi';
 import './CartDrawer.css';
 
 export default function CartDrawer({ open, onClose }) {
@@ -23,13 +30,15 @@ export default function CartDrawer({ open, onClose }) {
       <aside className={`cart-drawer ${open ? 'open' : ''}`} aria-label="Shopping cart">
         <div className="cart-head">
           <span className="cart-head-title">Your Cart</span>
-          <button className="cart-close" onClick={onClose} aria-label="Close cart">✕</button>
+          <button className="cart-close" onClick={onClose} aria-label="Close cart">
+            <FiX size={18} />
+          </button>
         </div>
 
         <div className="cart-body">
           {cart.length === 0 ? (
             <div className="cart-empty">
-              <div className="ce-icon">🛒</div>
+              <div className="ce-icon"><FiShoppingCart size={36} /></div>
               <p>Your cart awaits the stars</p>
             </div>
           ) : (
@@ -45,19 +54,19 @@ export default function CartDrawer({ open, onClose }) {
                     <button
                       className="qty-btn"
                       onClick={() => updateQty(item.id, item.qty - 1)}
-                    >−</button>
+                    ><FiMinus size={16} /></button>
                     <span className="qty-num">{item.qty}</span>
                     <button
                       className="qty-btn"
                       onClick={() => updateQty(item.id, item.qty + 1)}
-                    >+</button>
+                    ><FiPlus size={16} /></button>
                   </div>
                 </div>
                 <button
                   className="cart-item-remove"
                   onClick={() => removeFromCart(item.id)}
                   aria-label={`Remove ${item.name}`}
-                >✕</button>
+                ><FiTrash2 size={18} /></button>
               </div>
             ))
           )}

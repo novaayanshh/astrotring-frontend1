@@ -1,6 +1,12 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useCart } from "../context/CartContext"; // adjust path if your cart context lives elsewhere
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import {
+  FiMapPin,
+  FiTruck,
+  FiCheckCircle,
+  FiChevronRight,
+} from 'react-icons/fi';
+import { useCart } from '../context/CartContext';
 import styles from "./Checkout.module.css";
 
 const STEPS = ["Address", "Payment", "Review"];
@@ -114,14 +120,14 @@ export default function Checkout() {
           ))}
         </div>
         <div className={styles.successCard}>
-          <div className={styles.successIcon}>✦</div>
+          <div className={styles.successIcon}><FiCheckCircle size={32} color="green" /></div>
           <h2 className={styles.successTitle}>Order Confirmed</h2>
           <p className={styles.successText}>
             Your cosmic pieces are being prepared. A confirmation has been sent
             to your registered details.
           </p>
           <p className={styles.orderId}>
-            Order ID: AST-{Math.floor(100000 + Math.random() * 900000)}
+            <FiTruck size={16} /> Free Shipping
           </p>
           <button className={styles.primaryBtn} onClick={() => navigate("/shop")}>
             Continue Shopping

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FiHeart, FiStar } from 'react-icons/fi';
 import { useCart } from '../context/CartContext';
 import './ProductCard.css';
 
@@ -40,7 +41,9 @@ export default function ProductCard({ product }) {
           className="pc-wishlist"
           onClick={handleWishlist}
           aria-label="Add to wishlist"
-        >♡</button>
+        >
+          <FiHeart size={18} />
+        </button>
         {discount > 0 && (
           <span className="pc-discount">−{discount}%</span>
         )}
@@ -49,8 +52,8 @@ export default function ProductCard({ product }) {
       <div className="pc-info">
         <div className="pc-category">{product.cat}</div>
         <div className="pc-stars">
-          {'★'.repeat(Math.floor(product.rating))}
-          {'☆'.repeat(5 - Math.floor(product.rating))}
+          <FiStar size={14} />
+          <span>{product.rating.toFixed(1)}</span>
           <span className="pc-review-count">({product.reviews})</span>
         </div>
         <div className="pc-name">{product.name}</div>

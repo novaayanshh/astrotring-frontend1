@@ -25,9 +25,15 @@ body { background: var(--cosmic); color: var(--parchment); font-family: var(--fo
 a { text-decoration: none; color: inherit; }
 button { cursor: pointer; font-family: var(--font-body); }
 input, select, textarea { font-family: var(--font-body); }
+svg { vertical-align: middle; }
 
 .btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; padding: 0.9rem 2.5rem; border: none; border-radius: 100px; font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; transition: all var(--transition); display: inline-block; box-shadow: 0 8px 20px rgba(245,137,31,0.28); }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(245,137,31,0.36); }
+
+.btn-cart, .btn-login { display: flex; align-items: center; gap: 6px; }
+
+.btn-cart { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; padding: 0.9rem 2.5rem; border: none; border-radius: 100px; font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; transition: all var(--transition); display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; box-shadow: 0 8px 20px rgba(245,137,31,0.28); }
+.btn-cart:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(245,137,31,0.36); }
 
 .btn-outline { background: #fff; color: var(--gold); padding: 0.9rem 2.5rem; border: 1.5px solid var(--gold); border-radius: 100px; font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; transition: all var(--transition); display: inline-block; }
 .btn-outline:hover { background: rgba(245,137,31,0.08); transform: translateY(-2px); }

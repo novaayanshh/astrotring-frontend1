@@ -78,6 +78,41 @@
 }
 .nav-icon:hover { color: var(--gold); }
 
+.nav-search,
+.nav-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(245, 137, 31, 0.25);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--parchment-muted);
+  padding: 0.55rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.nav-search:hover,
+.nav-login:hover,
+.nav-cart:hover {
+  color: var(--gold);
+  border-color: rgba(245, 137, 31, 0.45);
+  background: rgba(245, 137, 31, 0.1);
+}
+
+.nav-cart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(245, 137, 31, 0.25);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--parchment-muted);
+  padding: 0.55rem 0.8rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: relative;
+}
+
 .cart-btn {
   font-size: 1.1rem;
   line-height: 1;

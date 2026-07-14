@@ -8,7 +8,7 @@ export default function Footer() {
         <div>
           <div className={styles.brand}>✦ Astrotring</div>
           <p className={styles.tagline}>
-            Bridging ancient Vedic wisdom with authentic gemstones — every piece energised for your unique cosmic journey.
+            Bridging ancient Vedic wisdom with authentic gemstones - every piece energised for your unique cosmic journey.
           </p>
         </div>
         <div>

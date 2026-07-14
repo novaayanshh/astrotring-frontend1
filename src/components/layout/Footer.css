@@ -5,6 +5,7 @@
 .footer-logo { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 1rem; }
 .footer-tagline { color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.8; margin-bottom: 1.25rem; }
 .footer-socials { display: flex; gap: 0.9rem; font-size: 1.1rem; opacity: 0.85; }
+.footer-socials svg { font-size: 1.4rem; color: #fff; }
 
 .footer-heading { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--gold); margin-bottom: 1.25rem; letter-spacing: 1px; }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }

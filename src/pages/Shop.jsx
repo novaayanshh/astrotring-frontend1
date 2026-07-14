@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { FiFilter, FiStar, FiChevronDown } from 'react-icons/fi';
 import { PRODUCTS } from '../data/products';
 import ProductCard from '../components/ui/ProductCard';
 import Footer from '../components/layout/Footer';
@@ -82,9 +83,9 @@ export default function Shop() {
             ))}
           </div>
 
-          <button className="btn-outline" style={{ width: '100%', fontSize: '0.78rem', padding: '0.6rem 1rem' }}
+          <button className="filter-btn" style={{ width: '100%', fontSize: '0.78rem', padding: '0.6rem 1rem' }}
             onClick={() => { setSelectedCat('All'); setSelectedZodiac('All'); setMaxPrice(50000); setMinRating(0); }}>
-            Clear Filters
+            <FiFilter size={16} /> Filters
           </button>
         </aside>
 

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { FiShoppingCart } from 'react-icons/fi';
 import { PRODUCTS } from '../data/products';
 import { useCart } from '../context/CartContext';
 import Footer from '../components/layout/Footer';
@@ -78,7 +79,10 @@ export default function ProductDetail() {
           </div>
 
           <div className={styles.actions}>
-            <button className="btn-primary" onClick={() => addToCart(product, qty)}>Add to Cart</button>
+            <button className="btn-cart" onClick={() => addToCart(product, qty)}>
+              <FiShoppingCart size={18} />
+              Add to Cart
+            </button>
             <button className={`btn-outline ${inWishlist ? styles.wishlisted : ''}`}
               onClick={() => toggleWishlist(product)}>
               {inWishlist ? '♥ Wishlisted' : '♡ Wishlist'}

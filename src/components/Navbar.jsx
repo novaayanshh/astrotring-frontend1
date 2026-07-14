@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import {
+  FiSearch,
+  FiShoppingCart,
+  FiUser,
+  FiHeart,
+  FiMenu,
+  FiX,
+} from 'react-icons/fi';
 import { useCart } from '../context/CartContext';
 import CartDrawer from './CartDrawer';
 import './Navbar.css';
@@ -47,26 +55,29 @@ export default function Navbar() {
         </ul>
 
         <div className="nav-actions">
-          <Link to="/shop" className="nav-icon" title="Search">🔍</Link>
+          <button className="nav-search" title="Search" aria-label="Search">
+            <FiSearch size={20} />
+          </button>
           <button
-            className="nav-icon cart-btn"
+            className="nav-cart"
             onClick={() => setCartOpen(true)}
             title="Cart"
             aria-label={`Cart — ${cartCount} items`}
           >
-            🛒
+            <FiShoppingCart size={20} />
             {cartCount > 0 && (
               <span className="cart-badge">{cartCount}</span>
             )}
           </button>
-          <Link to="/account" className="nav-icon" title="Account">👤</Link>
-          <Link to="/login">Sign In</Link>
+          <button className="nav-login" title="Login" aria-label="Login">
+            <FiUser size={20} />
+          </button>
           <button
             className="hamburger"
             onClick={() => setMenuOpen(v => !v)}
             aria-label="Toggle menu"
           >
-            {menuOpen ? '✕' : '☰'}
+            {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
       </nav>

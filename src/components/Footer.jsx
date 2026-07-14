@@ -1,6 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {
+  FiInstagram,
+  FiYoutube,
+  FiMail,
+  FiPhone,
+  FiChevronRight,
+} from 'react-icons/fi';
 import './Footer.css';
+
+const socialLinks = [
+  { icon: <FaInstagram />, label: 'Instagram', href: 'https://www.instagram.com/' },
+  { icon: <FaTiktok />, label: 'TikTok', href: 'https://www.tiktok.com/' },
+  { icon: <FaYoutube />, label: 'YouTube', href: 'https://www.youtube.com/' },
+  { icon: <FaEnvelope />, label: 'Email', href: 'mailto:hello@astrotring.com' },
+];
 
 export default function Footer() {
   return (
@@ -12,14 +26,17 @@ export default function Footer() {
             Bridging ancient Vedic wisdom with authentic gemstones — every piece energised for your unique cosmic journey.
           </p>
           <div className="footer-socials">
-            <span>📸</span><span>🐦</span><span>▶️</span><span>📘</span>
+            <a href="#"><FiInstagram size={20} /></a>
+            <a href="#"><FiYoutube size={20} /></a>
+            <a href="mailto:info@astrotring.com"><FiMail size={20} /></a>
+            <a href="tel:+911234567890"><FiPhone size={20} /></a>
           </div>
         </div>
 
         <div>
           <div className="footer-heading">Shop</div>
           <ul className="footer-links">
-            {['Gemstone Rings','Bracelets','Rudraksha Malas','Crystals & Décor','Yantras'].map(l => (
+            {['Gemstone Rings', 'Bracelets', 'Rudraksha Malas', 'Crystals & Décor', 'Yantras'].map((l) => (
               <li key={l}><Link to="/shop">{l}</Link></li>
             ))}
           </ul>
@@ -28,7 +45,7 @@ export default function Footer() {
         <div>
           <div className="footer-heading">Services</div>
           <ul className="footer-links">
-            {['Kundali Reading','Gemstone Advice','Kundali Matching','Vastu Consultation','Annual Forecast'].map(l => (
+            {['Kundali Reading', 'Gemstone Advice', 'Kundali Matching', 'Vastu Consultation', 'Annual Forecast'].map((l) => (
               <li key={l}><Link to="/services">{l}</Link></li>
             ))}
           </ul>
@@ -37,7 +54,7 @@ export default function Footer() {
         <div>
           <div className="footer-heading">Help</div>
           <ul className="footer-links">
-            {['About Us','Blog','Track Order','Return Policy','Contact Us'].map(l => (
+            {['About Us', 'Blog', 'Track Order', 'Return Policy', 'Contact Us'].map((l) => (
               <li key={l}><a href="#top">{l}</a></li>
             ))}
           </ul>
