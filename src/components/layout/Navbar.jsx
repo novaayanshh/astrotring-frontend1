@@ -1,6 +1,6 @@
 ﻿import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FiSearch, FiShoppingCart, FiUser, FiArrowRight, FiZap } from 'react-icons/fi';
+import { FiSearch, FiShoppingCart, FiUser, FiArrowRight, FiZap, FiFilter, FiHeart } from 'react-icons/fi';
 import { useCart } from '../../context/CartContext';
 import { PRODUCTS } from '../../data/products';
 import styles from './Navbar.module.css';
@@ -89,6 +89,7 @@ export default function Navbar() {
             aria-label="Search"
           >
             <FiSearch size={18} />
+            <span className={styles.iconLabel}>Search</span>
           </button>
 
           {searchOpen && (
@@ -99,7 +100,7 @@ export default function Navbar() {
                   className={styles.searchInput}
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search gems, rings, stonesâ€¦"
+                  placeholder="Search gems, rings, stones…"
                   autoComplete="off"
                 />
                 <button type="submit" className={styles.searchSubmit} aria-label="Go"><FiArrowRight size={16} /></button>
@@ -116,7 +117,7 @@ export default function Navbar() {
                         <span className={styles.srEmoji}>{p.emoji}</span>
                         <span className={styles.srInfo}>
                           <span className={styles.srName}>{p.name}</span>
-                          <span className={styles.srPrice}>â‚¹{p.price.toLocaleString('en-IN')}</span>
+                          <span className={styles.srPrice}>₹{p.price.toLocaleString('en-IN')}</span>
                         </span>
                       </button>
                     </li>
@@ -131,12 +132,26 @@ export default function Navbar() {
           )}
         </div>
 
+        <Link to="/shop" className={styles.iconBtn} title="Filter">
+          <FiFilter size={18} />
+          <span className={styles.iconLabel}>Filter</span>
+        </Link>
+
+        <Link to="/wishlist" className={styles.iconBtn} title="Wishlist">
+          <FiHeart size={18} />
+          <span className={styles.iconLabel}>Wishlist</span>
+        </Link>
+
         <button className={styles.iconBtn} onClick={() => setIsCartOpen(true)} title="Cart">
           <FiShoppingCart size={18} />
           {cartCount > 0 && <span className={styles.badge}>{cartCount}</span>}
+          <span className={styles.iconLabel}>Cart</span>
         </button>
 
-        <Link to="/account" className={styles.iconBtn} title="Account"><FiUser size={18} /></Link>
+        <Link to="/account" className={styles.iconBtn} title="Account">
+          <FiUser size={18} />
+          <span className={styles.iconLabel}>Account</span>
+        </Link>
       </div>
     </nav>
   );
