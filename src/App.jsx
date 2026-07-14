@@ -10,9 +10,10 @@ import Shop from './pages/Shop';
 import ProductDetail from './pages/ProductDetail';
 import Services from './pages/Services';
 import Account from './pages/Account';
+import Checkout from './pages/Checkout';
+import Astrologers from './pages/Astrologers';
 import './styles/global.css';
-import Checkout from "./pages/Checkout";
-import Astrologers from './pages/Astrologers/Astrologers';
+
 export default function App() {
   return (
     <CartProvider>
@@ -30,7 +31,6 @@ export default function App() {
           <Route path="/account" element={<Account />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/astrologers" element={<Astrologers />} />
-
         </Routes>
       </BrowserRouter>
     </CartProvider>
