@@ -5,7 +5,6 @@ import { PRODUCTS, CATEGORIES, ZODIAC_DATA, TESTIMONIALS, ASTROLOGERS, QUICK_LIN
 import ProductCard from '../components/ui/ProductCard';
 import Footer from '../components/layout/Footer';
 import styles from './Home.module.css';
-
 const FEATURED_IDS = [1, 4, 5, 7];
 
 function ZodiacStrip() {
@@ -59,7 +58,7 @@ function AstrologersSection() {
               <span><FiStar size={14} style={{ marginRight: '0.2rem' }} /> {a.rating}</span>
             </div>
             <button className={styles.astroBtn} onClick={() => navigate('/services')}>
-              Chat Â· <span className={styles.astroPrice}>â‚¹{a.price}/min</span>
+              Chat · <span className={styles.astroPrice}>₹{a.price}/min</span>
             </button>
           </div>
         ))}
@@ -88,10 +87,10 @@ function BirthstoneQuiz() {
       </div>
       {sel && (
         <div className={styles.quizResult}>
-          <div className={styles.qrTitle}>{sel.sign} {sel.name} Â· Stone: {sel.gem}</div>
+          <div className={styles.qrTitle}>{sel.sign} {sel.name} · Stone: {sel.gem}</div>
           <p className={styles.qrText}>{sel.desc}</p>
           <button className="btn-primary" style={{ marginTop: '1rem', fontSize: '0.8rem', padding: '0.7rem 1.5rem' }}
-            onClick={() => navigate('/shop')}>Shop These Gems â†’</button>
+            onClick={() => navigate('/shop')}>Shop These Gems →</button>
         </div>
       )}
     </div>
@@ -104,7 +103,7 @@ function SupportWidget() {
     <div className={styles.supportWidget}>
       {!dismissed && (
         <div className={styles.supportTip}>
-          <button className={styles.supportClose} onClick={() => setDismissed(true)} aria-label="Dismiss">Ã—</button>
+          <button className={styles.supportClose} onClick={() => setDismissed(true)} aria-label="Dismiss">×</button>
           <div className={styles.supportTipTitle}><FiMessageCircle size={16} style={{ marginRight: '0.4rem' }} /> Need guidance?</div>
           <div className={styles.supportTipText}>Chat with an astrologer now</div>
         </div>
@@ -127,12 +126,12 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroEyebrow}><FiZap size={14} style={{ marginRight: '0.35rem' }} /> Celestially Certified <FiZap size={14} style={{ marginLeft: '0.35rem' }} /></div>
         <h1 className={styles.heroTitle}>Wear the <span className={styles.gold}>Cosmos</span>,<br />Command Your Destiny</h1>
-        <p className={styles.heroSub}>Authentic Vedic gemstones, Rudraksha malas, and astrological jewellery â€” handpicked by expert astrologers for your unique birth chart.</p>
+        <p className={styles.heroSub}>Authentic Vedic gemstones, Rudraksha malas, and astrological jewellery — handpicked by expert astrologers for your unique birth chart.</p>
         <div className={styles.heroBtns}>
           <button className="btn-primary" onClick={() => navigate('/shop')}>Explore Collection</button>
           <button className="btn-outline" onClick={() => navigate('/services')}>Get a Reading</button>
         </div>
-        <div className={styles.heroScroll}>â†“</div>
+        <div className={styles.heroScroll}>↓</div>
       </section>
 
       {/* QUICK ACCESS PILLS */}
@@ -216,7 +215,7 @@ export default function Home() {
                 <div className={styles.testiAvatar}>{t.initials}</div>
                 <div>
                   <div className={styles.testiName}>{t.name}</div>
-                  <div className={styles.testiMeta}>{t.location} Â· Verified Purchase</div>
+                  <div className={styles.testiMeta}>{t.location} · Verified Purchase</div>
                 </div>
               </div>
             </div>
