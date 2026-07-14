@@ -1,18 +1,18 @@
 import Login from "./pages/Login";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { CartProvider } from './context/CartContext';
-import StarfieldCanvas from './components/layout/StarfieldCanvas';
-import Navbar from './components/layout/Navbar';
-import CartDrawer from './components/layout/CartDrawer';
-import Notification from './components/layout/Notification';
-import Home from './pages/Home';
-import Shop from './pages/Shop';
-import ProductDetail from './pages/ProductDetail';
-import Services from './pages/Services';
-import Account from './pages/Account';
-import Checkout from './pages/Checkout';
-import Astrologers from './pages/Astrologers';
-import './styles/global.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CartProvider } from "./context/CartContext";
+import StarfieldCanvas from "./components/layout/StarfieldCanvas";
+import Navbar from "./components/layout/Navbar";
+import CartDrawer from "./components/layout/CartDrawer";
+import Notification from "./components/layout/Notification";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
+import ProductDetail from "./pages/ProductDetail";
+import Services from "./pages/Services";
+import Account from "./pages/Account";
+import Checkout from "./pages/Checkout";
+import Astrologers from "./pages/astrologers";
+import "./styles/global.css";
 
 export default function App() {
   return (
@@ -22,6 +22,7 @@ export default function App() {
         <Navbar />
         <CartDrawer />
         <Notification />
+
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
