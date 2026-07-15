@@ -1,6 +1,6 @@
 ﻿import { useState, useRef, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FiSearch, FiShoppingCart, FiUser, FiArrowRight, FiZap, FiFilter, FiHeart } from 'react-icons/fi';
+import { FiSearch, FiShoppingCart, FiUser, FiArrowRight, FiZap, FiFilter, FiHeart, FiMenu, FiX } from 'react-icons/fi';
 import { useCart } from '../../context/CartContext';
 import { PRODUCTS } from '../../data/products';
 import styles from './Navbar.module.css';
@@ -11,6 +11,7 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   const [searchOpen, setSearchOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [query, setQuery] = useState('');
   const inputRef = useRef(null);
   const wrapperRef = useRef(null);
@@ -46,10 +47,14 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const handler = (e) => { if (e.key === 'Escape') setSearchOpen(false); };
+    const handler = (e) => { if (e.key === 'Escape') { setSearchOpen(false); setMobileMenuOpen(false); } };
     document.addEventListener('keydown', handler);
     return () => document.removeEventListener('keydown', handler);
   }, []);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
 
   const handleResultClick = (id) => {
     setSearchOpen(false);
@@ -70,7 +75,7 @@ export default function Navbar() {
     <nav className={styles.nav}>
       <Link to="/" className={styles.logo}><FiZap size={16} style={{ marginRight: '0.35rem' }} /> Astrotring</Link>
 
-      <ul className={styles.links}>
+      <ul className={`${styles.links} ${mobileMenuOpen ? styles.linksOpen : ''}`}>
         {links.map(l => (
           <li key={l.to}>
             <Link to={l.to} className={`${styles.link} ${pathname === l.to ? styles.active : ''}`}>
@@ -152,6 +157,14 @@ export default function Navbar() {
           <FiUser size={18} />
           <span className={styles.iconLabel}>Account</span>
         </Link>
+
+        <button
+          className={styles.hamburger}
+          onClick={() => setMobileMenuOpen(o => !o)}
+          aria-label="Menu"
+        >
+          {mobileMenuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
+        </button>
       </div>
     </nav>
   );
