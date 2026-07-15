@@ -189,14 +189,68 @@
   padding: 10px 0;
 }
 
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  padding: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger:hover {
+  color: var(--gold);
+}
+
 @media (max-width: 768px) {
   .links {
     display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    z-index: 150;
   }
+
+  .linksOpen {
+    display: flex;
+  }
+
+  .links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .links li a {
+    display: block;
+    padding: 0.9rem 1rem;
+  }
+
   .nav {
     padding: 0 1rem;
   }
+
   .actions {
-    gap: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .iconLabel {
+    display: none;
+  }
+
+  .searchDropdown {
+    width: 90vw;
+    right: -1rem;
+  }
+
+  .hamburger {
+    display: flex;
   }
 }
