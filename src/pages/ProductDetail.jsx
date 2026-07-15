@@ -57,10 +57,10 @@ export default function ProductDetail() {
           </div>
 
           <div className={styles.priceBlock}>
-            <span className={styles.price}>â‚¹{product.price.toLocaleString('en-IN')}</span>
-            <span className={styles.oldPrice}>â‚¹{product.old.toLocaleString('en-IN')}</span>
-            <div className={styles.saving}>You save â‚¹{saving.toLocaleString('en-IN')} ({savingPct}% off)</div>
-          </div>
+  <span className={styles.price}>₹{product.price.toLocaleString('en-IN')}</span>
+  <span className={styles.oldPrice}>₹{product.old.toLocaleString('en-IN')}</span>
+  <div className={styles.saving}>You save ₹{saving.toLocaleString('en-IN')} ({savingPct}% off)</div>
+</div>
 
           <p className={styles.desc}>{product.desc}</p>
 

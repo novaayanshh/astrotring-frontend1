@@ -63,7 +63,7 @@
 .testiGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
 .testiCard { background: #FFFFFF; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 16px rgba(0,0,0,0.04); padding: 2rem; }
 .testiStars { color: var(--gold); margin-bottom: 1rem; font-size: 0.9rem; }
-.testiText { color: var(--parchment-muted); line-height: 1.8; font-style: italic; margin-bottom: 1.5rem; font-size: 0.92rem; }
+.testiText { color: var(--parchment-muted); line-height: 1.7; font-style: normal; font-weight: 400; margin-bottom: 1.5rem; font-size: 0.92rem; }
 .testiAuthor { display: flex; align-items: center; gap: 0.75rem; }
 .testiAvatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--amethyst), var(--amethyst-light)); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--white); flex-shrink: 0; }
 .testiName { font-size: 0.88rem; color: var(--white); }

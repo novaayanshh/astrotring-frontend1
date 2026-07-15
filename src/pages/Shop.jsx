@@ -69,7 +69,7 @@ export default function Shop() {
             <div className={styles.filterGroupLabel}>Max Price</div>
             <input type="range" className={styles.priceRange} min={500} max={50000} step={500}
               value={maxPrice} onChange={e => setMaxPrice(Number(e.target.value))} />
-            <div className={styles.priceLabels}><span>â‚¹500</span><span>â‚¹{maxPrice.toLocaleString('en-IN')}</span></div>
+            <div className={styles.priceLabels}><span>₹500</span><span>₹{maxPrice.toLocaleString('en-IN')}</span></div>
           </div>
 
           <div className={styles.filterGroup}>
@@ -122,4 +122,3 @@ export default function Shop() {
     </div>
   );
 }
-
