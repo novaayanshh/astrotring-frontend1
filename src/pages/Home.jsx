@@ -124,7 +124,6 @@ export default function Home() {
     <div>
       {/* HERO */}
       <section className={styles.hero}>
-        <div className={styles.heroEyebrow}><FiZap size={14} style={{ marginRight: '0.35rem' }} /> Celestially Certified <FiZap size={14} style={{ marginLeft: '0.35rem' }} /></div>
         <h1 className={styles.heroTitle}>Wear the <span className={styles.gold}>Cosmos</span>,<br />Command Your Destiny</h1>
         <p className={styles.heroSub}>Authentic Vedic gemstones, Rudraksha malas, and astrological jewellery — handpicked by expert astrologers for your unique birth chart.</p>
         <div className={styles.heroBtns}>
