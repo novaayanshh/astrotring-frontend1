@@ -13,6 +13,8 @@ export default function Navbar() {
     { to: '/shop',      label: 'Shop'        },
     { to: '/services',  label: 'Services'    },
     { to: '/astrologers', label: 'Astrologers' },
+    { to: '/blog',      label: 'Blog'        },
+    { to: '/contact',   label: 'Contact'     },
     { to: '/account',   label: 'Account'     },
   ];
 
