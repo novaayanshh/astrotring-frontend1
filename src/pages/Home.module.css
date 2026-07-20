@@ -1,6 +1,6 @@
 .hero { min-height: calc(100vh - 64px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; position: relative; z-index: 1; background-image: linear-gradient(rgba(13,10,26,0.55), rgba(13,10,26,0.55)), url('/assets/cosmic-hero.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
 .heroEyebrow { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; opacity: 0.9; }
-.heroTitle { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 6vw, 5rem); color: #FFFFFF; line-height: 1.1; margin-bottom: 1.5rem; text-shadow: 0 2px 20px rgba(0,0,0,0.65), 0 1px 4px rgba(0,0,0,0.5); }
+.heroTitle { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 6vw, 5rem); color: #FFFFFF; line-height: 1.1; margin-bottom: 7.5rem; text-shadow: 0 2px 20px rgba(0,0,0,0.65), 0 1px 4px rgba(0,0,0,0.5); }
 .gold { color: #F5891F; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
 .heroSub { font-size: 1.05rem; color: rgba(255,255,255,0.85); max-width: 520px; line-height: 1.8; margin-bottom: 3rem; }
 .heroBtns { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
