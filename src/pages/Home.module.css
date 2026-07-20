@@ -17,6 +17,7 @@
   z-index:1;
   overflow:hidden;
 
+  background-color:#0d0a1a;
   background-image:
     linear-gradient(
       rgba(13,10,26,.30),
@@ -319,10 +320,19 @@ width:100%;
 
 }
 
+@media (max-width:600px){
+
+.hero{
+    background-size:contain;
+    background-position:center 30%;
+}
+
+}
+
 @media (max-width:480px){
 
 .hero{
-    background-position:center 10%;
+    background-position:center 26%;
 }
 
 .heroSub{
