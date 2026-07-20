@@ -2,6 +2,7 @@
 
 .hero{
   min-height:calc(100vh - 64px);
+  min-height:calc(100dvh - 64px);
 
   display:flex;
   flex-direction:column;
@@ -10,10 +11,11 @@
 
   text-align:center;
 
-  padding:150px 20px 120px;
+  padding:clamp(90px,14vw,150px) 20px clamp(70px,10vw,120px);
 
   position:relative;
   z-index:1;
+  overflow:hidden;
 
   background-image:
     linear-gradient(
@@ -23,8 +25,8 @@
     url("/assets/cosmic-hero.png");
 
   background-repeat:no-repeat;
-  background-size:115%;
-  background-position:center 8%;
+  background-size:cover;
+  background-position:center 30%;
 }
 
 .heroEyebrow{
@@ -57,7 +59,7 @@
 .heroSub{
   max-width:600px;
 
-  margin-top:9rem;
+  margin-top:clamp(1.5rem,10vw,5rem);
   margin-bottom:2.2rem;
 
   font-size:1.08rem;
@@ -263,49 +265,35 @@ grid-template-columns:1fr;
 
 }
 
-.heroBtns button{
+.heroBtns{
+    flex-direction:column;
+    width:100%;
+    align-items:center;
+}
 
-width:100%;
-
+.heroBtns > *{
+    width:100%;
+    max-width:320px;
 }
 
 .heroSub{
 
 width:100%;
-
-}
-
-.heroTitle{
-
-font-size:2rem;
 
 }
 
 }
 /* ================= RESPONSIVE HERO ================= */
 
-@media (max-width:1200px){
-
-.hero{
-    background-size:125%;
-}
-
-}
-
 @media (max-width:992px){
 
 .hero{
-    padding:130px 24px 100px;
-    background-size:140%;
-}
-
-.heroTitle{
-    font-size:clamp(2.2rem,7vw,4rem);
+    padding:clamp(90px,12vw,130px) 24px clamp(80px,10vw,100px);
+    background-position:center 22%;
 }
 
 .heroSub{
     max-width:560px;
-    font-size:1rem;
 }
 
 }
@@ -313,21 +301,16 @@ font-size:2rem;
 @media (max-width:768px){
 
 .hero{
-    min-height:90vh;
-    padding:110px 20px 90px;
-    background-size:165%;
-    background-position:center top;
+    background-position:center 15%;
 }
 
 .heroTitle{
-    font-size:clamp(2rem,8vw,3.2rem);
     line-height:1.15;
 }
 
 .heroSub{
     max-width:90%;
     font-size:.95rem;
-    margin-bottom:2.2rem;
 }
 
 .heroBtns{
@@ -339,29 +322,12 @@ font-size:2rem;
 @media (max-width:480px){
 
 .hero{
-    padding:90px 18px 70px;
-    background-size:210%;
-    background-position:center top;
-}
-
-.heroTitle{
-    font-size:2.2rem;
+    background-position:center 10%;
 }
 
 .heroSub{
     font-size:.9rem;
     line-height:1.7;
-}
-
-.heroBtns{
-    flex-direction:column;
-    width:100%;
-    align-items:center;
-}
-
-.heroBtns > *{
-    width:100%;
-    max-width:320px;
 }
 
 .heroScroll{
