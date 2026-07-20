@@ -1,11 +1,101 @@
-.hero { min-height: calc(100vh - 64px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; position: relative; z-index: 1; background-image: linear-gradient(rgba(13,10,26,0.55), rgba(13,10,26,0.55)), url('/assets/cosmic-hero.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
-.heroEyebrow { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; opacity: 0.9; }
-.heroTitle { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 6vw, 5rem); color: #FFFFFF; line-height: 1.1; margin-bottom: 7.5rem; text-shadow: 0 2px 20px rgba(0,0,0,0.65), 0 1px 4px rgba(0,0,0,0.5); }
-.gold { color: #F5891F; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
-.heroSub { font-size: 1.05rem; color: rgba(255,255,255,0.85); max-width: 520px; line-height: 1.8; margin-bottom: 3rem; }
-.heroBtns { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
-.heroScroll { position: absolute; bottom: 2rem; color: var(--gold); font-size: 1.5rem; animation: bounce 2s infinite; pointer-events: none; }
-@keyframes bounce { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-8px); } }
+/* ================= HERO ================= */
+
+.hero{
+  min-height:calc(100vh - 64px);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  padding:150px 20px 120px;
+
+  position:relative;
+  z-index:1;
+
+  background-image:
+    linear-gradient(
+      rgba(13,10,26,.30),
+      rgba(13,10,26,.30)
+    ),
+    url("/assets/cosmic-hero.png");
+
+  background-repeat:no-repeat;
+  background-size:115%;
+  background-position:center 8%;
+}
+
+.heroEyebrow{
+  font-size:.75rem;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:1.5rem;
+  opacity:.9;
+}
+
+.heroTitle{
+  font-family:'Cinzel',serif;
+  font-size:clamp(2.4rem,6vw,5rem);
+  line-height:1.08;
+  color:#fff;
+
+  margin-bottom:1.4rem;
+
+  text-shadow:
+    0 2px 20px rgba(0,0,0,.65),
+    0 1px 4px rgba(0,0,0,.5);
+}
+
+.gold{
+  color:#F5891F;
+  text-shadow:0 2px 20px rgba(0,0,0,.5);
+}
+
+.heroSub{
+  max-width:600px;
+
+  margin-top:9rem;
+  margin-bottom:2.2rem;
+
+  font-size:1.08rem;
+  line-height:1.8;
+  color:rgba(255,255,255,.88);
+}
+
+.heroBtns{
+  margin-top:1.4rem;
+
+  display:flex;
+  justify-content:center;
+  gap:1.25rem;
+  flex-wrap:wrap;
+}
+
+.heroScroll{
+  position:absolute;
+  bottom:2rem;
+
+  color:var(--gold);
+  font-size:1.5rem;
+
+  animation:bounce 2s infinite;
+  pointer-events:none;
+}
+
+@keyframes bounce{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-8px);
+  }
+}
+
+
+
 
 .quickPills { background: #FFFFFF; border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); padding: 1rem 0; position: relative; z-index: 1; }
 .pillsScroll { display: flex; gap: 0.75rem; overflow-x: auto; padding: 0 2rem; scrollbar-width: none; }
@@ -20,7 +110,14 @@
 @keyframes scrollX { from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
 
 .catSection { background: var(--cosmic); position: relative; z-index: 1; }
-.catGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+.catGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 .catCard { background: #FFFFFF; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 16px rgba(0,0,0,0.04); padding: 2rem 1.5rem; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }
 .catCard:hover { border-color: var(--gold); box-shadow: 0 10px 28px rgba(245,137,31,0.14); transform: translateY(-4px); }
 .catIcon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
@@ -28,7 +125,14 @@
 .catCount { font-size: 0.8rem; color: var(--gold); opacity: 0.85; }
 
 .astroSection { background: var(--cosmic); position: relative; z-index: 1; }
-.astroGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+.astroGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 .astroCard { background: #FFFFFF; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 16px rgba(0,0,0,0.04); padding: 1.75rem 1.5rem; text-align: center; transition: all 0.3s; }
 .astroCard:hover { border-color: var(--gold); box-shadow: 0 10px 28px rgba(245,137,31,0.14); transform: translateY(-4px); }
 .astroAvatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--amethyst), var(--amethyst-light)); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--white); margin: 0 auto 1rem; position: relative; }
@@ -41,12 +145,32 @@
 .astroBtn:hover { background: var(--gold); color: #fff; }
 
 .featuredSection { background: #FFFFFF; border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); position: relative; z-index: 1; }
-.prodGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
-
-.quiz { background: #FFFFFF; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 8px 30px rgba(0,0,0,0.05); max-width: 700px; margin: 0 auto; padding: 3rem; position: relative; z-index: 1; }
+.prodGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.quiz {
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    width: min(700px,100%);
+    margin: 0 auto;
+    padding: clamp(20px,4vw,50px);
+    position: relative;
+    z-index: 1;
+}
 .quizTitle { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 1rem; text-align: center; }
 .quizSub { color: var(--parchment-muted); text-align: center; margin-bottom: 2rem; line-height: 1.8; font-size: 0.9rem; }
-.zodiacGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+.zodiacGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+    gap: .75rem;
+}
 .zodiacBtn { background: transparent; border-radius: 10px; border: 1px solid rgba(245,137,31,0.25); color: var(--parchment-muted); padding: 0.75rem 0.5rem; transition: all 0.3s; font-size: 0.82rem; text-align: center; }
 .zodiacBtn:hover, .zodiacActive { background: rgba(245,137,31,0.1); border-color: var(--gold); color: var(--gold-dark); }
 .zSign { font-size: 1.4rem; display: block; margin-bottom: 4px; }
@@ -68,10 +192,180 @@
 .testiAvatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--amethyst), var(--amethyst-light)); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--white); flex-shrink: 0; }
 .testiName { font-size: 0.88rem; color: var(--white); }
 .testiMeta { font-size: 0.75rem; color: var(--gold); opacity: 0.8; }
-
-.supportWidget { position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 200; display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem; }
+.supportWidget{
+    right:16px;
+    bottom:16px;
+}
 .supportTip { position: relative; background: #FFFFFF; border-radius: 14px; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.12); padding: 0.9rem 1.1rem; max-width: 220px; }
 .supportTipTitle { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--gold-dark); margin-bottom: 0.25rem; }
 .supportTipText { font-size: 0.75rem; color: var(--parchment-muted); }
 .supportClose { position: absolute; top: -8px; right: -8px; width: 20px; height: 20px; border-radius: 50%; background: #FFFFFF; border: 1px solid rgba(0,0,0,0.1); color: var(--gold-dark); font-size: 0.7rem; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 .supportBtn { width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; box-shadow: 0 4px 16px rgba(37,211,102,0.4); }
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:1024px){
+
+.prodGrid,
+.catGrid,
+.astroGrid,
+.testiGrid{
+
+grid-template-columns:repeat(2,minmax(0,1fr));
+
+}
+
+}
+
+@media (max-width:768px){
+
+.prodGrid,
+.catGrid,
+.astroGrid,
+.testiGrid{
+
+grid-template-columns:1fr;
+
+}
+
+.quiz{
+
+padding:20px;
+
+}
+
+.trustGrid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.supportTip{
+
+display:none;
+
+}
+
+.supportWidget{
+
+right:15px;
+
+bottom:15px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.trustGrid{
+
+grid-template-columns:1fr;
+
+}
+
+.heroBtns button{
+
+width:100%;
+
+}
+
+.heroSub{
+
+width:100%;
+
+}
+
+.heroTitle{
+
+font-size:2rem;
+
+}
+
+}
+/* ================= RESPONSIVE HERO ================= */
+
+@media (max-width:1200px){
+
+.hero{
+    background-size:125%;
+}
+
+}
+
+@media (max-width:992px){
+
+.hero{
+    padding:130px 24px 100px;
+    background-size:140%;
+}
+
+.heroTitle{
+    font-size:clamp(2.2rem,7vw,4rem);
+}
+
+.heroSub{
+    max-width:560px;
+    font-size:1rem;
+}
+
+}
+
+@media (max-width:768px){
+
+.hero{
+    min-height:90vh;
+    padding:110px 20px 90px;
+    background-size:165%;
+    background-position:center top;
+}
+
+.heroTitle{
+    font-size:clamp(2rem,8vw,3.2rem);
+    line-height:1.15;
+}
+
+.heroSub{
+    max-width:90%;
+    font-size:.95rem;
+    margin-bottom:2.2rem;
+}
+
+.heroBtns{
+    gap:.8rem;
+}
+
+}
+
+@media (max-width:480px){
+
+.hero{
+    padding:90px 18px 70px;
+    background-size:210%;
+    background-position:center top;
+}
+
+.heroTitle{
+    font-size:2.2rem;
+}
+
+.heroSub{
+    font-size:.9rem;
+    line-height:1.7;
+}
+
+.heroBtns{
+    flex-direction:column;
+    width:100%;
+    align-items:center;
+}
+
+.heroBtns > *{
+    width:100%;
+    max-width:320px;
+}
+
+.heroScroll{
+    bottom:1rem;
+}
+
+}
